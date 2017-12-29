@@ -38,6 +38,31 @@ if (token) {
 }
 
 /**
+ * Application theme Requirements
+ */
+require('jquery.backstretch');
+require('jquery.backstretch/jquery.backstretch.min.js');
+require('jquery.simple-text-rotator');
+require('jquery.simple-text-rotator/simpletextrotator.css');
+require('jquery-countto');
+require('jquery-countto/jquery.countTo.js');
+require('owl.carousel');
+require('owl.carousel/dist/assets/owl.carousel.min.css');
+require('owl.carousel/dist/assets/owl.theme.default.min.css');
+require('waypoints/lib/jquery.waypoints.min.js');
+require('wowjs');
+require('wowjs/dist/wow.min.js');
+require('smoothscroll');
+require('smoothscroll/smoothscroll.min.js');
+require('magnific-popup');
+require('magnific-popup/dist/jquery.magnific-popup.min.js');
+require('magnific-popup/dist/magnific-popup.css');
+require('animate.css');
+require('fitvids');
+require('fitvids/fitvids.min.js');
+require('font-awesome/css/font-awesome.min.css');
+
+/**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.

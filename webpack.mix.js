@@ -11,6 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
+if (process.env.hasOwnProperty("MIX_APP_ENV") && process.env["MIX_APP_ENV"] !== "production")
+    mix.sourceMaps();
+
 mix.react('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
+    .sass('resources/assets/sass/theme.scss', 'public/css')
     .version();

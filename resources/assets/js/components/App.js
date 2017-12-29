@@ -626,16 +626,16 @@ class App extends React.Component {
 
                             <div className="col-md-6 wow bounceInRight">
 
-                                <form id="contact-form" role="form" novalidate>
+                                <form id="contact-form" role="form" noValidate>
 
                                     <div className="form-group">
-                                        <label className="sr-only" for="name">Name</label>
+                                        <label className="sr-only" htmlFor="name">Name</label>
                                         <input type="text" id="name" className="form-control" name="name" placeholder="Name" required=""/>
                                             <p className="help-block text-danger"></p>
                                     </div>
 
                                     <div className="form-group">
-                                        <label className="sr-only" for="email">Email address</label>
+                                        <label className="sr-only" htmlFor="email">Email address</label>
                                         <input type="email" id="email" className="form-control" name="email" placeholder="E-mail" required=""/>
                                             <p className="help-block text-danger"></p>
                                     </div>
