@@ -10,7 +10,7 @@ class Work extends React.Component {
 
     render() {
         return (
-            <a href="https://vimeo.com/45830194" className={this.props.video ? "video-pop-up" : "pop-up"} title={this.props.caption}>
+            <a href={this.props.image} className={this.props.video ? "video-pop-up" : "pop-up"} title={this.props.caption}>
                 <div className="portfolio-item">
                     <div className="portfolio-item-preview">
                         <img src={this.props.image} alt={this.props.imageAlt}/>

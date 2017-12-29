@@ -21,9 +21,9 @@ class Contact extends React.Component {
                             {this.props.information}
                             <ul className="icon-list">
                                 {this.props.address ? <li><i className="fa fa-fw fa-map-marker"/>{this.props.address}</li> : ""}
-                                {this.props.phone ? <li><i className="fa fa-fw fa-phone"/>{this.props.phone}</li> : ""}
-                                {this.props.email ? <li><i className="fa fa-fw fa-envelope-o"/><a href="mailto:">{this.props.email}</a></li> : ""}
-                                {this.props.website ? <li><i className="fa fa-fw fa-globe"/><a href="">http://www.site.com</a></li> : ""}
+                                {this.props.phone ? <li><i className="fa fa-fw fa-phone"/><a href={"phone:" + this.props.phone}>{this.props.phone}</a></li> : ""}
+                                {this.props.email ? <li><i className="fa fa-fw fa-envelope-o"/><a href={"mailto:" + this.props.email}>{this.props.email}</a></li> : ""}
+                                {this.props.website ? <li><i className="fa fa-fw fa-globe"/><a href="">{this.props.website}</a></li> : ""}
                             </ul>
                         </div>
                         <div className="col-md-6 wow bounceInRight">
@@ -57,7 +57,7 @@ class Contact extends React.Component {
 }
 
 Contact.defaultProps = {
-    title: "Contact Us",
+    title: "Contact Me",
     description: <p>Have an inquiry? Feel free to ask!</p>,
     address: null,
     phone: null,

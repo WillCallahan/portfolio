@@ -16,7 +16,7 @@ class ResumeItem extends React.Component {
                     <hr className="hidden-xs"/>
                 </div>
                 <div className="col-md-3 col-sm-4 resume-place wow bounceInRight">
-                    <h4><i className="fa fa-suitcase"/> {this.props.company}</h4>
+                    <h4><i className={"fa " + this.props.icon}/> {this.props.company}</h4>
                     <i className="fa fa-calendar"/> {this.props.date}
                     <hr className="visible-xs"/>
                 </div>
@@ -30,14 +30,16 @@ ResumeItem.defaultProps = {
     title: null,
     description: null,
     company: null,
+    icon: "fa-suitcase",
     date: null,
-    offset: false
+    offset: true
 };
 
 ResumeItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.node.isRequired,
     company: PropTypes.string,
+    icon: PropTypes.string,
     date: PropTypes.string,
     offset: PropTypes.bool
 };
