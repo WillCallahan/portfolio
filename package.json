@@ -1,11 +1,11 @@
 {
-	"version": "0.1.0",
-	"description": "Portfolio Project for William Callahan",
+    "version": "0.1.0",
+    "description": "Portfolio Project for William Callahan",
     "author": {
-		"name": "William Callahan",
-		"url": "http://callahanwilliam.com"
-	},
-	"license": "MIT",
+        "name": "William Callahan",
+        "url": "http://callahanwilliam.com"
+    },
+    "license": "MIT",
     "private": true,
     "scripts": {
         "dev": "npm run development",
@@ -21,10 +21,15 @@
         "babel-preset-react": "^6.23.0",
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
+        "jquery": "^1.11.0",
         "laravel-mix": "^1.7.2",
         "lodash": "^4.17.4",
         "react": "^15.4.2",
         "react-dom": "^15.4.2"
+    },
+    "dependencies": {
+        "prop-types": "^15.6.0",
+        "react-router": "^4.2.0",
+        "react-router-dom": "^4.2.2"
     }
 }
