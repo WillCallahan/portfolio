@@ -25,6 +25,11 @@ class Profile extends React.Component {
         return skillRates;
     }
 
+    /**
+     * Gets all the skills that the user has
+     *
+     * @return {any[]} All the skills of the user
+     */
     getSkillSet() {
         return Object.keys(this.props.skillSet).map((skill) => {
             return (
@@ -38,6 +43,11 @@ class Profile extends React.Component {
         });
     }
 
+    /**
+     * Gets all the available social profiles
+     *
+     * @return {Array} All the social profiles of the user
+     */
     getSocialProfiles() {
         let socialProfiles = [];
         for (let socialProfile in this.props.socialProfiles) {

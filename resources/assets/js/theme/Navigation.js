@@ -8,6 +8,11 @@ class Navigation extends React.Component {
         this.state = {};
     }
 
+    /**
+     * Gets all the main navigation tabs
+     *
+     * @return {any[]} All main navigation tabs
+     */
     getTabs() {
         return Object.keys(this.props.tabs).map(tab => {
             return (<li key={tab}><a href={this.props.tabs[tab]}>{tab}</a></li>)
@@ -18,7 +23,6 @@ class Navigation extends React.Component {
         return (
             <nav className="navbar navbar-custom navbar-fixed-top" role="navigation">
                 <div className="container">
-
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span className="sr-only">Toggle navigation</span>
@@ -34,7 +38,6 @@ class Navigation extends React.Component {
                             {this.getTabs()}
                         </ul>
                     </div>
-
                 </div>
             </nav>
         );
