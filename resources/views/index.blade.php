@@ -12,13 +12,13 @@
 
     <!-- region Theme JavaScript -->
     <!-- WOW - Reveal Animations When You Scroll -->
-    <script src="{{ asset("public/js/theme/wow.min.js") }}"></script>
+    <script src="{{ mix("js/theme/wow.js") }}"></script>
     <!-- Fitvids -->
-    <script src="{{ asset("public/js/theme/jquery.fitvids.js") }}"></script>
+    <script src="{{ mix("js/theme/jquery.fitvids.js") }}"></script>
     <!-- jqBootstrapValidation -->
-    <script src="{{ asset("public/js/theme/jqBootstrapValidation.js") }}"></script>
+    <script src="{{ mix("js/theme/jqBootstrapValidation.js") }}"></script>
     <!-- Custom scripts -->
-    <script src="{{ asset("public/js/theme/custom.js") }}"></script>
+    <script src="{{ mix("js/theme/theme.js") }}"></script>
     <!-- endregion -->
 @endsection
 

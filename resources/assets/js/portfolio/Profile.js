@@ -101,8 +101,7 @@ Profile.defaultProps = {
         "Java": 4,
         "Python": 4,
         "HTML/CSS/JavaScript": 4,
-        "C#": 2,
-        "PHP": 3,
+        "C#": 3,
     },
     socialProfiles: {
         "facebook": null,
