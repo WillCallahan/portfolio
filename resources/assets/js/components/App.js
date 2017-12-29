@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Navigation from "../theme/Navigation";
+import Introduction from "../theme/Introduction";
+import HeadContact from "../theme/HeadContact";
+import Profile from "../theme/Profile";
+
 class App extends React.Component {
 
     constructor() {
@@ -25,169 +30,13 @@ class App extends React.Component {
                     </div>
                 </div>
 
-                <nav className="navbar navbar-custom navbar-fixed-top" role="navigation">
-                    <div className="container">
+                <Navigation name={this.props.name}/>
 
-                        <div className="navbar-header">
-                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span className="sr-only">Toggle navigation</span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                            </button>
-                            <a className="navbar-brand" href="#">Mark Stone</a>
-                        </div>
+                <Introduction name={this.props.name}/>
 
-                        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul className="nav navbar-nav navbar-right">
-                                <li><a href="#intro">home</a></li>
-                                <li><a href="#profile">Profile</a></li>
-                                <li><a href="#services">Services</a></li>
-                                <li><a href="#resume">Resume</a></li>
-                                <li><a href="#portfolio">Portfolio</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
+                <HeadContact/>
 
-                    </div>
-                </nav>
-
-                <section id="intro" className="section">
-
-                    <div className="container">
-
-                        <div className="row">
-
-                            <div className="col-md-12">
-
-                                <div className="hello wow bounceInDown">
-                                    <h1>Hello, I'm Mark Stone</h1>
-                                    <h3><span className="rotate">Visual Designer. | Front-end Developer. | C# Programmer.</span></h3>
-                                </div>
-
-                                <a href="#profile">
-                                    <div className="mouse-icon">
-                                        <div className="wheel"></div>
-                                    </div>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="profile-contact">
-
-                    <div className="container">
-
-                        <div className="row">
-
-                            <div className="col-sm-4 wow bounceInLeft">
-                                <div className="profile-item">
-                                    <i className="fa fa-envelope-o"></i>
-                                    <h5><a href="#">markstone@some.com</a></h5>
-                                </div>
-                            </div>
-
-                            <div className="col-sm-4 wow bounceInUp">
-                                <div className="profile-item">
-                                    <i className="fa fa-phone"></i>
-                                    <h5>(1234) 1234-5678-1011</h5>
-                                </div>
-                            </div>
-
-                            <div className="col-sm-4 wow bounceInRight">
-                                <div className="profile-item">
-                                    <i className="fa fa-map-marker"></i>
-                                    <h5>144 Some Street, Some City, Some Country</h5>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="profile" className="section">
-
-                    <div className="container">
-
-                        <div className="row">
-
-                            <div className="col-md-12 headline wow bounceInDown">
-                                <h2>Mark Stone</h2>
-                                <p>Visual Designer. Front-end Developer. C# Programmer.</p>
-                            </div>
-
-                            <div className="col-md-3 col-sm-6 hidden-xs wow bounceInLeft">
-                                <img className="avatar" src="/public/images/theme/photo.jpg" alt=""/>
-                            </div>
-
-                            <div className="col-md-3 col-sm-6 wow bounceInUp">
-
-                                <div className="profile-widget">
-                                    <h3>Skillset</h3>
-
-                                    <h5>UX Design</h5>
-                                    <div className="skill-bar">
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-off"></div>
-                                    </div>
-
-                                    <h5>HTML / CSS3 / SASS</h5>
-                                    <div className="skill-bar">
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-off"></div>
-                                        <div className="skill-rate-off"></div>
-                                    </div>
-
-                                    <h5>Javascript</h5>
-                                    <div className="skill-bar">
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-on"></div>
-                                    </div>
-
-                                    <h5>Ajax</h5>
-                                    <div className="skill-bar">
-                                        <div className="skill-rate-on"></div>
-                                        <div className="skill-rate-off"></div>
-                                        <div className="skill-rate-off"></div>
-                                        <div className="skill-rate-off"></div>
-                                    </div>
-                                </div>
-
-                                <div className="profile-widget">
-                                    <h3>Social Profiles</h3>
-                                    <ul className="widget-social">
-                                        <li><a href="#"><i className="fa fa-facebook fa-fw"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-github-alt"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-dribbble"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div className="col-md-6 col-sm-12 wow bounceInRight">
-                                <h3>Profesional Profile</h3>
-                                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend. I am so happy, my dear friend.</p>
-                                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
+                <Profile name={this.props.name}/>
 
                 <section id="stats" className="callout">
 
@@ -686,11 +535,13 @@ class App extends React.Component {
 }
 
 App.defaultProps = {
-    title: "Portfolio"
+    title: "Portfolio",
+    name: "William Callahan"
 };
 
 App.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    name: PropTypes.string
 };
 
 export default App;
