@@ -76,7 +76,7 @@ class Navigation extends React.Component {
 Navigation.defaultProps = {
     name: "William Callahan",
     tabs: {
-        "Home": "#home",
+        "Home": "#intro",
         "Profile": "#profile",
         "Services": "#services",
         "Resume": "#resume",

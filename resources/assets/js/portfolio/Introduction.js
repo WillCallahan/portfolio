@@ -11,9 +11,7 @@ class Introduction extends React.Component {
 
     componentDidMount() {
 		$('#intro').backstretch([
-			'public/images/theme/bg3.jpg',
-			'public/images/theme/bg4.jpg',
-			'public/images/theme/bg2.jpg'
+			'public/images/theme/backstretch/Screens.jpg',
 		], {duration: 3000, fade: 750});
 		$(".rotate").textrotator({
 			animation: "dissolve",

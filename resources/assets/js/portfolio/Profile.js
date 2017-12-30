@@ -52,7 +52,7 @@ class Profile extends React.Component {
         let socialProfiles = [];
         for (let socialProfile in this.props.socialProfiles) {
             if (this.props.socialProfiles.hasOwnProperty(socialProfile) && this.props.socialProfiles[socialProfile])
-                socialProfiles.push(<li key={socialProfile}><a href="#"><i className={"fa fa-" + socialProfile + " fa-fw"}/></a></li>);
+                socialProfiles.push(<li key={socialProfile}><a href={this.props.socialProfiles[socialProfile]}><i className={"fa fa-" + socialProfile + " fa-fw"}/></a></li>);
         }
         return socialProfiles;
     }

@@ -37,7 +37,7 @@ class Capabilities extends React.Component {
                     <div className="row">
                         <div className="col-md-12 headline wow bounceInDown">
                             <h2>{this.props.title}</h2>
-                            <p>{this.props.description}</p>
+                            {this.props.description ? <p>{this.props.description}</p> : ""}
                         </div>
                         <div className="col-md-12">
                             {this.getCapabilities()}
@@ -52,14 +52,14 @@ class Capabilities extends React.Component {
 
 Capabilities.defaultProps = {
     title: "What I can do",
-    description: "Services that I provide.",
+    description: null,
     capabilities: [
-        React.createElement(Capability, {title: "Text rotator", description: <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>, icon: "fa-pencil"}),
-        React.createElement(Capability, {title: "Slideshow", description: <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>, icon: "fa-image"}),
-        React.createElement(Capability, {title: "Easy configure", description: <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>, icon: "fa-cog"}),
-        React.createElement(Capability, {title: "Clear code", description: <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>, icon: "fa-code"}),
-        React.createElement(Capability, {title: "Responsive design", description: <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>, icon: "fa-desktop"}),
-        React.createElement(Capability, {title: "Support", description: <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>, icon: "fa-life-ring"}),
+		React.createElement(Capability, {title: "Full Stack", description: <p>Working as a full-stack developer to maintain all aspects of an application.</p>, icon: "fa-server"}),
+		React.createElement(Capability, {title: "REST Services", description: <p>Building REST APIs that adhere to proper RESTful Web Service Standards.</p>, icon: "fa-retweet"}),
+		React.createElement(Capability, {title: "Agile", description: <p>Working in fast-paced agile development environments</p>, icon: "fa-group"}),
+		React.createElement(Capability, {title: "Responsive Design", description: <p>Creating web applications that are both mobile and user friendly.</p>, icon: "fa-desktop"}),
+		React.createElement(Capability, {title: "Server Configuration", description: <p>Configuring AWS, Windows, and Linux Servers for hosting applications.</p>, icon: "fa-cogs"}),
+        React.createElement(Capability, {title: "Support", description: <p>Providing full-lifecycle development.</p>, icon: "fa-life-ring"}),
     ],
     itemsPerRow: 3
 };

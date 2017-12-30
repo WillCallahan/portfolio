@@ -40,8 +40,8 @@ class Work extends React.Component {
 }
 
 Work.defaultProps = {
-    title: "Some Work",
-    description: "Category",
+    title: null,
+    description: null,
 	image: "/public/images/theme/p1.jpg",
 	popupLink: "/public/images/theme/p1.jpg",
     imageAlt: null,
@@ -50,8 +50,8 @@ Work.defaultProps = {
 };
 
 Work.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
 	image: PropTypes.string,
 	popupLink: PropTypes.string,
     imageAlt: PropTypes.string,

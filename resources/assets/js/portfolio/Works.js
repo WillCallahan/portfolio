@@ -66,7 +66,7 @@ class Works extends React.Component {
 			},
 			callbacks: {
 				open: function(arg) {
-					var _this = this;
+					let _this = this;
 					this.updateStatus('loading', '');
 					$(this.content).find("iframe.mfp-iframe").load(function() {
 						_this.updateStatus('ready', '');
@@ -98,12 +98,12 @@ Works.defaultProps = {
     title: "Portfolio",
     description: null,
     works: [
-        React.createElement(Work, {title: "Client 1", type: "iframe", popupLink: "https://visionsconstructionllc.com/"},),
-        React.createElement(Work, {title: "Client 2",}),
-        React.createElement(Work, {title: "Client 3",}),
-        React.createElement(Work, {title: "Client 4",}),
-        React.createElement(Work, {title: "Client 5",}),
-        React.createElement(Work, {title: "Client 6",}),
+        React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/"},),
+        React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/"}),
+        React.createElement(Work, {title: "Battleship", description: "Battleship Game",}),
+        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler"}),
+        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas"}),
+        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda"}),
     ],
 };
 

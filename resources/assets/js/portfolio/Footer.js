@@ -12,10 +12,13 @@ class Footer extends React.Component {
 			<footer id="footer">
 				<div className="container">
 					<div className="row">
-						<div className="col-md-12">
+						<div className="col-md-8">
 							<p className="copy">
 								{this.props.description}
 							</p>
+						</div>
+						<div className="col-md-4 text-right">
+							{this.props.github ? <a href={this.props.github}><i className="fa fa-github"/></a> : ""}
 						</div>
 					</div>
 				</div>
@@ -26,11 +29,13 @@ class Footer extends React.Component {
 }
 
 Footer.defaultProps = {
-	description: null
+	description: null,
+	github: null
 };
 
 Footer.propTypes = {
-	description: PropTypes.node.isRequired
+	description: PropTypes.node.isRequired,
+	github: PropTypes.string
 };
 
 export default Footer;

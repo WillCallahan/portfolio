@@ -14,7 +14,7 @@ class Contact extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 headline wow bounceInLeft">
-                            <h2>Contact Us</h2>
+                            <h2>{this.props.title}</h2>
                             {this.props.description}
                         </div>
                         <div className="col-md-6 wow bounceInUp">

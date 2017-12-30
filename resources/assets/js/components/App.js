@@ -42,7 +42,7 @@ class App extends React.Component {
 
 				<HeadContact/>
 
-				<Profile name={this.props.name}/>
+				<Profile name={this.props.name} socialProfiles={this.props.socialProfiles} image={this.props.profileImage}/>
 
 				<Stats/>
 
@@ -58,7 +58,7 @@ class App extends React.Component {
 
 				<Contact/>
 
-				<Footer description={<span>&copy; 2017 {this.props.name}, All Rights Reserved.</span>}/>
+				<Footer description={<span>&copy; 2017 {this.props.name}, All Rights Reserved.</span>} github={this.props.repository}/>
 
 			</div>
 		);
@@ -68,12 +68,20 @@ class App extends React.Component {
 
 App.defaultProps = {
 	title: "Portfolio",
-	name: "William Callahan"
+	name: "William Callahan",
+	repository: "https://github.com/WillCallahan/portfolio",
+	socialProfiles: {
+		github: "https://github.com/WillCallahan",
+		linkedin: "https://www.linkedin.com/in/william-callahan-32ba31109/"
+	},
+	profileImage: "/public/images/theme/Profile.jpg"
 };
 
 App.propTypes = {
 	title: PropTypes.string,
-	name: PropTypes.string
+	name: PropTypes.string,
+	repository: PropTypes.string,
+	socialProfiles: PropTypes.object
 };
 
 export default App;
