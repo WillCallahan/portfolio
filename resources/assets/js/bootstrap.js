@@ -46,6 +46,8 @@ require('jquery.simple-text-rotator');
 require('jquery.simple-text-rotator/simpletextrotator.css');
 require('jquery-countto');
 require('jquery-countto/jquery.countTo.js');
+require('jquery-popup-overlay');
+require('jquery-popup-overlay/jquery.popupoverlay');
 require('owl.carousel');
 require('owl.carousel/dist/assets/owl.carousel.min.css');
 require('owl.carousel/dist/assets/owl.theme.default.min.css');

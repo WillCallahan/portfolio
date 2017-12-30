@@ -880,6 +880,89 @@ h3 > .fa {
 }
 
 /* ---------------------------------------------- /*
+ * Magnific Plugin
+/* ---------------------------------------------- */
+
+.pop-up-iframe {
+	position: relative;
+	background: $body-bg;
+	padding-top: 40px;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+.pop-up-iframe > iframe {
+	border: none;
+	width: 100%;
+	min-height: 500px;
+}
+
+.mfp-bg {
+	opacity: $mfp-bg-opacity;
+	-webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 0.5s; /* Firefox < 16 */
+	-ms-animation: fadein 0.5s; /* Internet Explorer */
+	-o-animation: fadein 0.5s; /* Opera < 12.1 */
+	animation: fadein 0.5s;
+}
+
+.mfp-content {
+	opacity: 1;
+	-webkit-transition: opacity 2s; /* Safari */
+	transition: opacity 1s;
+}
+
+.mfp-s-loading > .mfp-content {
+	opacity: 0;
+}
+
+.mfp-preloader {
+	width: 30px !important;
+	height: 30px;
+	background-color: #FFF;
+	color: rgba(0, 0, 0, 0);
+	opacity: 0.65;
+	margin: 0 auto;
+	animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes rotateplane {
+	0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg) }
+	50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) }
+	100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg) }
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: $mfp-bg-opacity; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: $mfp-bg-opacity; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: $mfp-bg-opacity; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: $mfp-bg-opacity; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: $mfp-bg-opacity; }
+}
+
+/* ---------------------------------------------- /*
  * Media
 /* ---------------------------------------------- */
 

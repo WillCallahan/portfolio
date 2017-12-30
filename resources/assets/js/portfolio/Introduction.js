@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import $ from "jquery";
 
 class Introduction extends React.Component {
 
@@ -7,6 +8,19 @@ class Introduction extends React.Component {
         super();
         this.state = {};
     }
+
+    componentDidMount() {
+		$('#intro').backstretch([
+			'public/images/theme/bg3.jpg',
+			'public/images/theme/bg4.jpg',
+			'public/images/theme/bg2.jpg'
+		], {duration: 3000, fade: 750});
+		$(".rotate").textrotator({
+			animation: "dissolve",
+			separator: "|",
+			speed: 3000
+		});
+	}
 
     render() {
         return (

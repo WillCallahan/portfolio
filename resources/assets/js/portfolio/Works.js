@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import $ from "jquery";
 import Work from "./Work";
 
 class Works extends React.Component {
@@ -32,6 +33,49 @@ class Works extends React.Component {
         });
     }
 
+    componentDidMount() {
+		$('#portfolio').magnificPopup({
+			delegate: 'a.pop-up',
+			type: 'image',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0, 1]
+			},
+			image: {
+				titleSrc: 'title',
+				tError: 'The image could not be loaded.',
+			}
+		});
+
+		$('.video-pop-up').magnificPopup({
+			type: 'iframe',
+			srcAction: 'iframe_src'
+		});
+
+		$('.iframe-pop-up').magnificPopup({
+			key: 'pop-up-iframe',
+			type: 'iframe',
+			preloader: true,
+			tLoading: '',
+			iframe: {
+				markup: '<div class="mfp-iframe-scaler pop-up-iframe"><div class="mfp-close"></div><iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe></div>',
+			},
+			gallery: {
+				enabled: true
+			},
+			callbacks: {
+				open: function(arg) {
+					var _this = this;
+					this.updateStatus('loading', '');
+					$(this.content).find("iframe.mfp-iframe").load(function() {
+						_this.updateStatus('ready', '');
+					});
+				}
+			}
+		});
+    }
+
     render() {
         return (
             <section id="portfolio" className="section">
@@ -54,7 +98,7 @@ Works.defaultProps = {
     title: "Portfolio",
     description: null,
     works: [
-        React.createElement(Work, {title: "Client 1",}),
+        React.createElement(Work, {title: "Client 1", type: "iframe", popupLink: "https://visionsconstructionllc.com/"},),
         React.createElement(Work, {title: "Client 2",}),
         React.createElement(Work, {title: "Client 3",}),
         React.createElement(Work, {title: "Client 4",}),

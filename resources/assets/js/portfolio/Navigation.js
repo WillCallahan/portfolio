@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import $ from "jquery";
 
 class Navigation extends React.Component {
 
@@ -17,6 +18,33 @@ class Navigation extends React.Component {
         return Object.keys(this.props.tabs).map(tab => {
             return (<li key={tab}><a href={this.props.tabs[tab]}>{tab}</a></li>)
         });
+    }
+
+    componentDidMount() {
+		let navbar = $('.navbar');
+		let navHeight = navbar.height();
+
+		$(window).scroll(function () {
+			if ($(this).scrollTop() >= navHeight) {
+				navbar.addClass('navbar-color');
+			}
+			else {
+				navbar.removeClass('navbar-color');
+			}
+		});
+
+		if ($(window).width() <= 767) {
+			navbar.addClass('custom-collapse');
+		}
+
+		$(window).resize(function () {
+			if ($(this).width() <= 767) {
+				navbar.addClass('custom-collapse');
+			}
+			else {
+				navbar.removeClass('custom-collapse');
+			}
+		});
     }
 
     render() {

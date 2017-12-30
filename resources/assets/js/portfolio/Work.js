@@ -8,9 +8,22 @@ class Work extends React.Component {
         this.state = {};
     }
 
+    getType() {
+        switch(this.props.type) {
+            case "video":
+                return "video-pop-up";
+            case "image":
+                return "pop-up";
+            case "iframe":
+                return "iframe-pop-up";
+            default:
+                throw new Error("Popup type " +  this.props.type + " does not exist!");
+        }
+    }
+
     render() {
         return (
-            <a href={this.props.image} className={this.props.video ? "video-pop-up" : "pop-up"} title={this.props.caption}>
+            <a href={this.props.popupLink} className={this.getType()} title={this.props.caption}>
                 <div className="portfolio-item">
                     <div className="portfolio-item-preview">
                         <img src={this.props.image} alt={this.props.imageAlt}/>
@@ -29,19 +42,24 @@ class Work extends React.Component {
 Work.defaultProps = {
     title: "Some Work",
     description: "Category",
-    image: "/public/images/theme/p1.jpg",
+	image: "/public/images/theme/p1.jpg",
+	popupLink: "/public/images/theme/p1.jpg",
     imageAlt: null,
     caption: null,
-    video: false,
+    type: "image"
 };
 
 Work.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
-    image: PropTypes.string,
+	image: PropTypes.string,
+	popupLink: PropTypes.string,
     imageAlt: PropTypes.string,
     caption: PropTypes.string,
-    video: PropTypes.bool,
+	/**
+     * Type of popup to show (image, video, iframe)
+	 */
+	type: PropTypes.string,
 };
 
 export default Work;
