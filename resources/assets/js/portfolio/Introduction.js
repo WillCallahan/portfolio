@@ -10,9 +10,7 @@ class Introduction extends React.Component {
     }
 
     componentDidMount() {
-		$('#intro').backstretch([
-			'public/images/theme/backstretch/Screens.jpg',
-		], {duration: 3000, fade: 750});
+		$('#intro').backstretch(this.props.images, {duration: 3000, fade: 750});
 		$(".rotate").textrotator({
 			animation: "dissolve",
 			separator: "|",
@@ -27,7 +25,7 @@ class Introduction extends React.Component {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="hello wow bounceInDown">
-                                <h1>Hello, I'm {this.props.name}</h1>
+                                <h1>Hi, I'm {this.props.name}</h1>
                                 <h3>
                                     <span className="rotate">{this.props.skills.join(" | ")}</span>
                                 </h3>
@@ -55,12 +53,16 @@ Introduction.defaultProps = {
         "Python Engineer",
         "HTML/CSS/JavaScript Developer",
     ],
+	images: [
+		"public/images/theme/backstretch/Screens.jpg",
+	],
     link: "#profile"
 };
 
 Introduction.propTypes = {
     name: PropTypes.string,
     skills: PropTypes.array,
+	images: PropTypes.array,
     link: PropTypes.string
 };
 

@@ -8,9 +8,9 @@
 @endsection
 
 @section('javascript')
+    <!-- region JavaScript -->
+    <!-- React App  -->
     <script src="{{ mix('js/app.js') }}"></script>
-
-    <!-- region Theme JavaScript -->
     <!-- WOW - Reveal Animations When You Scroll -->
     <script src="{{ mix("js/theme/wow.js") }}"></script>
     <!-- Fitvids -->
