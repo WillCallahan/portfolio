@@ -22,4 +22,5 @@ mix.react('resources/assets/js/app.js', 'public/js')
     .copy('resources/assets/js/theme/jquery.fitvids.js', 'public/js/theme')
     .copy('resources/assets/js/theme/wow.js', 'public/js/theme')
     .copy('resources/assets/images', 'public/images')
+    .copy('resources/assets/docs', 'public/docs')
     .version();
