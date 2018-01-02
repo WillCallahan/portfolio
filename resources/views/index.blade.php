@@ -15,8 +15,6 @@
     <script src="{{ mix("js/theme/wow.js") }}"></script>
     <!-- Fitvids -->
     <script src="{{ mix("js/theme/jquery.fitvids.js") }}"></script>
-    <!-- jqBootstrapValidation -->
-    <script src="{{ mix("js/theme/jqBootstrapValidation.js") }}"></script>
     <!-- Custom scripts -->
     <script src="{{ mix("js/theme/theme.js") }}"></script>
     <!-- endregion -->

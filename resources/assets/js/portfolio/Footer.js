@@ -18,7 +18,7 @@ class Footer extends React.Component {
 							</p>
 						</div>
 						<div className="col-md-4 text-right">
-							{this.props.github ? <a href={this.props.github}><i className="fa fa-github"/></a> : ""}
+							{this.props.github ? <a href={this.props.github} target="_blank"><i className="fa fa-github"/></a> : ""}
 						</div>
 					</div>
 				</div>

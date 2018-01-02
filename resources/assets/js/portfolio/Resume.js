@@ -28,7 +28,7 @@ class Resume extends React.Component {
                     {this.getResumeSections()}
                     <div className="row">
                         <div className="col-md-6 col-md-offset-3 wow bounceInUp">
-                            <a href={this.props.resumeLink} className="btn btn-default btn-custom-2"><i className="fa fa-cloud-download icon-before"/> {this.props.resumeLinkText}</a>
+                            <a href={this.props.resumeLink} className="btn btn-default btn-custom-2" download><i className="fa fa-cloud-download icon-before"/> {this.props.resumeLinkText}</a>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ class Resume extends React.Component {
 Resume.defaultProps = {
     title: "Resume",
     description: "My education and experience.",
-    resumeLink: null,
+    resumeLink: "/public/docs/Resume - William Callahan[2017-11-21].docx",
     resumeLinkText: "Download CV",
     resumeSections: [
         React.createElement(ResumeSection, {

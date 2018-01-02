@@ -85,7 +85,7 @@ Stats.defaultProps = {
 	title: "My Stats",
 	statistics: [
 		React.createElement(Stat, {title: "Languages Learned", value: 12, icon: "fa-graduation-cap"}),
-		React.createElement(Stat, {title: "Programs Written", value: 20, icon: "fa-microchip"}),
+		React.createElement(Stat, {title: "Programs Written", value: 14, icon: "fa-microchip"}),
 		React.createElement(Stat, {title: "Lines Written", value: 400000, icon: "fa-file-text-o", postfix: "+"}),
 	]
 };

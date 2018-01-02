@@ -65,6 +65,22 @@ require('fitvids/fitvids.min.js');
 require('font-awesome/css/font-awesome.min.css');
 
 /**
+ * jQuery Configuration
+ */
+$.ajaxSetup({
+	contentType: "application/json",
+	dataType: "json",
+	url: "/",
+	async: true,
+	headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+	error: function(jqXHR, textStatus, errorThrown) {
+		console.error(errorThrown);
+	}
+});
+
+/**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
