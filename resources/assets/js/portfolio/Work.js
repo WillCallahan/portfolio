@@ -23,7 +23,7 @@ class Work extends React.Component {
 
     render() {
         return (
-            <a href={this.props.popupLink} className={this.getType()} title={this.props.caption}>
+            <a href={this.props.popupLink || this.props.image} className={this.getType()} title={this.props.caption}>
                 <div className="portfolio-item">
                     <div className="portfolio-item-preview">
                         <img src={this.props.image} alt={this.props.imageAlt}/>
@@ -43,7 +43,7 @@ Work.defaultProps = {
     title: null,
     description: null,
 	image: "/public/images/theme/p1.jpg",
-	popupLink: "/public/images/theme/p1.jpg",
+	popupLink: null,
     imageAlt: null,
     caption: null,
     type: "image"

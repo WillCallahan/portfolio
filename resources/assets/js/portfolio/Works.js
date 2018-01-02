@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import $ from "jquery";
 import Work from "./Work";
+import ArrayUtility from "./utility/ArrayUtility";
 
 class Works extends React.Component {
 
@@ -28,9 +29,13 @@ class Works extends React.Component {
     }
 
     getWorks() {
-        return this.props.works.map(function(work, i) {
-            return (<div key={"work" + work.props.title} className={"col-md-4 col-sm-6 wow " + Works.getAnimation(i)} data-wow-delay={Works.getDelay(i)}>{work}</div>);
-        });
+    	let groupedArray = ArrayUtility.getInGroupsOf(this.props.works, this.props.worksPerRow);
+        return groupedArray.map(function(works, i) {
+        	let worksElements = works.map(function(work, o) {
+        		return (<div key={"work" + work.props.title} className={"col-md-4 col-sm-6 wow " + Works.getAnimation((i * this.props.worksPerRow) + o)} data-wow-delay={Works.getDelay((i * this.props.worksPerRow) + o)}>{work}</div>);
+			}, this);
+			return (<div key={"worksRow" + i} className="row">{worksElements}</div>);
+        }, this);
     }
 
     componentDidMount() {
@@ -85,8 +90,8 @@ class Works extends React.Component {
                             <h2>{this.props.title}</h2>
                             <p>{this.props.description}</p>
                         </div>
-                        {this.getWorks()}
-                    </div>
+					</div>
+					{this.getWorks()}
                 </div>
             </section>
         );
@@ -98,19 +103,21 @@ Works.defaultProps = {
     title: "Portfolio",
     description: null,
     works: [
-        React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/"},),
-        React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/"}),
-        React.createElement(Work, {title: "Battleship", description: "Battleship Game",}),
-        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler"}),
-        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas"}),
-        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda"}),
+        React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/", image: "/public/images/portfolio/VisionsConstructionLLC.jpg"},),
+        React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/", image: "/public/images/portfolio/FairfieldCountyFilms.jpg"}),
+        React.createElement(Work, {title: "Battleship", description: "Battleship Game", image: "/public/images/portfolio/BattleshipCrop.jpg", popupLink: "/public/images/portfolio/Battleship.png"}),
+        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler", image: "/public/images/portfolio/MSLCompiler.jpg"}),
+        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas", image: "/public/images/portfolio/TypingTest.jpg"}),
+        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda", image: "/public/images/portfolio/ContactManagerColor.jpg"}),
     ],
+	worksPerRow: 3,
 };
 
 Works.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     works: PropTypes.array,
+	worksPerRow: PropTypes.number,
 };
 
 export default Works;
