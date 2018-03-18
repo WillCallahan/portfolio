@@ -63,7 +63,10 @@ Slider.defaultProps = {
 		React.createElement(SliderItem, {title: "Python 2.7/3.5", image: "/public/images/technology/Python.png"}),
 		React.createElement(SliderItem, {title: "C#", image: "/public/images/technology/CSharp.png"}),
 		React.createElement(SliderItem, {title: "PHP 7", image: "/public/images/technology/Php.png"}),
-		React.createElement(SliderItem, {title: "AWS", image: "/public/images/technology/AWSCertifiedSolutionsArchitectAssociate.png"}),
+		React.createElement(SliderItem, {title: "AWS",
+			image: "/public/images/technology/AWSCertifiedSolutionsArchitectAssociate.png",
+			imageLink: "https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2018-03-15&ci=AWS00445177"
+		}),
 		React.createElement(SliderItem, {title: ".NET", image: "/public/images/technology/DotNet.png"}),
 		React.createElement(SliderItem, {title: "Laravel", image: "/public/images/technology/Laravel.png"}),
 		React.createElement(SliderItem, {title: "Spring Framework", image: "/public/images/technology/Spring.png"}),
