@@ -8,10 +8,17 @@ class SliderItem extends React.Component {
         this.state = {};
     }
 
+    getImg() {
+        let imgTag = <img src={this.props.image} alt={this.props.imageAlt || this.props.title} />;
+        if (this.props.imageLink)
+            return <a href={this.props.imageLink}>{imgTag}</a>;
+        return imgTag;
+    }
+
     render() {
         return (
             <div className="owl-item">
-                <img src={this.props.image} alt={this.props.imageAlt || this.props.title}/>
+                {this.getImg()}
                 <h4 className="text-center">{this.props.title}</h4>
             </div>
         );
