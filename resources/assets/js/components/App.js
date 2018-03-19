@@ -9,7 +9,6 @@ import Stats from "../portfolio/Stats";
 import Capabilities from "../portfolio/Capabilities";
 import Status from "../portfolio/Status";
 import Resume from "../portfolio/Resume";
-import Slider from "../portfolio/Slider";
 import Works from "../portfolio/Works";
 import Contact from "../portfolio/Contact";
 import Footer from "../portfolio/Footer";
@@ -52,7 +51,8 @@ class App extends React.Component {
 
 				<Resume/>
 
-				<Slider/>
+				{/*TODO This is broken; fix it*/}
+				{/*<Slider/>*/}
 
 				<Works/>
 

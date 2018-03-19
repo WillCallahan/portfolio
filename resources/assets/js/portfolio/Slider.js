@@ -21,7 +21,7 @@ class Slider extends React.Component {
 	}
 
 	componentDidMount() {
-		$("#owl-clients").owlCarousel({
+		$(".owl-carousel").owlCarousel({
 			items: 4,
 			slideSpeed: 300,
 			paginationSpeed: 400,
@@ -43,7 +43,7 @@ class Slider extends React.Component {
 							{this.props.description ? <p>{this.props.description}</p> : ""}
 						</div>
 						<div className="col-md-9 wow bounceInRight">
-							<div id="owl-clients" className="owl-carousel">
+							<div className="owl-carousel">
 								{this.getClients()}
 							</div>
 						</div>
