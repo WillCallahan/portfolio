@@ -16,8 +16,8 @@ import Loader from "../portfolio/Loader";
 
 class App extends React.Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {};
 	}
 

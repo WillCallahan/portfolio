@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Stat from "./Stat";
+import $ from 'jquery';
 
 class Stats extends React.Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			smWidth: 3,
 			mdWidth: 3,

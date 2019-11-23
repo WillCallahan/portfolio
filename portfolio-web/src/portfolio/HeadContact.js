@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 class HeadContact extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             width: 4
         };

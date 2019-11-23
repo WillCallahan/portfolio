@@ -6,8 +6,8 @@ import ContactModel from "./model/Contact";
 
 class Contact extends React.Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			contactForm: {
 				name: "",

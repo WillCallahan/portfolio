@@ -5,10 +5,6 @@ import ResumeItem from "./ResumeItem";
 
 class Resume extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     getResumeSections() {
         return this.props.resumeSections.map(function (resumeSection) {
             return (<div key={"resumeSection" + resumeSection.props.title}>{resumeSection}</div>);

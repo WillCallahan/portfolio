@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class Status extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <section className="callout">

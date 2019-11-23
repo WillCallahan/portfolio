@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class Loader extends React.Component {
 
-	constructor() {
-		super();
-	}
-
 	render() {
 		return (
 			<div id="preloader">

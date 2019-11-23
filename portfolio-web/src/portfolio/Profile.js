@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 
 class Profile extends React.Component {
 
-	constructor() {
-		super();
-	}
-
 	/**
 	 * Gets rating bars that describe the proficiency of a particular skill
 	 *

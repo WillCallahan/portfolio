@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 class ResumeItem extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {

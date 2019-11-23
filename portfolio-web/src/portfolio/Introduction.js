@@ -4,8 +4,8 @@ import $ from "jquery";
 
 class Introduction extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 

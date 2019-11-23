@@ -5,8 +5,8 @@ import SliderItem from "./SliderItem";
 
 class Slider extends React.Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {};
 	}
 

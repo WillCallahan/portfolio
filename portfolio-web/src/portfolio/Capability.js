@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class Capability extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     getIcon() {
         if (this.props.icon) {
             return (

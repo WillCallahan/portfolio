@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class Footer extends React.Component {
 
-	constructor() {
-		super();
-	}
-
 	render() {
 		return (
 			<footer id="footer">

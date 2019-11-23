@@ -3,8 +3,8 @@ import React from "react";
 
 class Work extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 

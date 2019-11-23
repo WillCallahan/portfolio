@@ -6,8 +6,8 @@ import ArrayUtility from "./utility/ArrayUtility";
 
 class Works extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 

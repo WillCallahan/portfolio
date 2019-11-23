@@ -4,10 +4,6 @@ import Capability from './Capability';
 
 class Capabilities extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     getRows() {
         let rows = [];
         for (let i = 0; i < this.props.capabilities.length; i++) {

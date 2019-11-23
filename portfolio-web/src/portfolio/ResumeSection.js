@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class ResumeSection extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     getResumeItems() {
         return this.props.resumeItems.map(function(resumeItem) {
             return (<div key={"resumeItem" + resumeItem.props.title}>{resumeItem}</div>);
