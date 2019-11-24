@@ -1,6 +1,7 @@
 const path = require('path');
 const HWP = require('html-webpack-plugin');
-const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
+const {ProvidePlugin} = require('webpack');
 
 module.exports = {
 	entry: './src/index.js',
@@ -77,6 +78,14 @@ module.exports = {
 		contentBase: './dist'
 	},
 	plugins: [
-		new HWP({template: path.join(__dirname, '/public/index.html')})
+		new HWP({template: path.join(__dirname, '/public/index.html')}),
+		new CopyPlugin([
+			{from: path.join(__dirname, '/public/manifest.json'), to: path.join(__dirname, '/dist/manifest.json')}
+		]),
+		new ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery'
+		})
 	]
 };

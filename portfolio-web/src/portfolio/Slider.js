@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
-import $ from "jquery";
 import SliderItem from "./SliderItem";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 class Slider extends React.Component {
 
@@ -13,23 +15,10 @@ class Slider extends React.Component {
 	getClients() {
 		return this.props.clients.map(function (client) {
 			return (
-				<div key={"client" + client.props.title}>
+				<div className={"item"} key={"client" + client.props.title}>
 					{client}
 				</div>
 			);
-		});
-	}
-
-	componentDidMount() {
-		$(".owl-carousel").owlCarousel({
-			items: 4,
-			slideSpeed: 300,
-			paginationSpeed: 400,
-			autoplay: true,
-			autoplayTimeout: 1000,
-			loop: true,
-			autoWidth: true,
-			margin: 25
 		});
 	}
 
@@ -43,9 +32,9 @@ class Slider extends React.Component {
 							{this.props.description ? <p>{this.props.description}</p> : ""}
 						</div>
 						<div className="col-md-9 wow bounceInRight">
-							<div className="owl-carousel">
+							<OwlCarousel className="owl-theme" items={4} margin={25} autoplay autoplayTimeout={1000} autoplaySpeed={600} loop autoWidth>
 								{this.getClients()}
-							</div>
+							</OwlCarousel>
 						</div>
 					</div>
 				</div>
@@ -57,7 +46,7 @@ class Slider extends React.Component {
 
 Slider.defaultProps = {
 	title: "Technology",
-	description: "Technologies I have used professionally.",
+	description: "Proficiencies",
 	clients: [
 		React.createElement(SliderItem, {title: "Java 8", image: "/public/images/technology/Java.png"}),
 		React.createElement(SliderItem, {title: "Python 2.7/3.5", image: "/public/images/technology/Python.png"}),
