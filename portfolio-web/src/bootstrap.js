@@ -1,100 +1,57 @@
+import $ from 'jquery'
 
-window._ = require('lodash');
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap-sass');
-} catch (e) {
-	console.warn("Could not load bootstrap-sass")
+function requireAll(r) {
+	r.keys().forEach(r);
 }
 
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
+const initialize = () => {
+	window._ = require('lodash');
 
-window.axios = require('axios');
+	/**
+	 * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+	 * for JavaScript based Bootstrap features such as modals and tabs. This
+	 * code may be modified to fit the specific needs of your application.
+	 */
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+	try {
+		window.$ = window.jQuery = require('jquery');
 
-/**
- * Next we will register the CSRF Token as a common header with Axios so that
- * all outgoing HTTP requests automatically have it attached. This is just
- * a simple convenience so we don't have to attach every token manually.
- */
-
-let token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
-/**
- * Application theme Requirements
- */
-require('jquery.backstretch');
-require('jquery.backstretch/jquery.backstretch.min.js');
-require('jquery.simple-text-rotator');
-require('jquery.simple-text-rotator/simpletextrotator.css');
-require('jquery-countto');
-require('jquery-countto/jquery.countTo.js');
-require('jquery-popup-overlay');
-require('jquery-popup-overlay/jquery.popupoverlay');
-require('owl.carousel');
-require('owl.carousel/dist/assets/owl.carousel.min.css');
-require('owl.carousel/dist/assets/owl.theme.default.min.css');
-require('waypoints/lib/jquery.waypoints.min.js');
-require('wowjs');
-require('wowjs/dist/wow.min.js');
-require('smoothscroll');
-require('smoothscroll/smoothscroll.min.js');
-require('magnific-popup');
-require('magnific-popup/dist/jquery.magnific-popup.min.js');
-require('magnific-popup/dist/magnific-popup.css');
-require('animate.css');
-require('fitvids');
-require('fitvids/fitvids.min.js');
-require('font-awesome/css/font-awesome.min.css');
-
-/**
- * jQuery Configuration
- */
-$.ajaxSetup({
-	contentType: "application/json",
-	dataType: "json",
-	url: "/",
-	async: true,
-	headers: {
-		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-	error: function(jqXHR, textStatus, errorThrown) {
-		console.error(errorThrown);
+		require('bootstrap');
+		require('bootstrap-sass');
+	} catch (e) {
+		console.warn("Could not load bootstrap-sass")
 	}
-});
 
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
+	/**
+	 * Application theme Requirements
+	 */
 
-// import Echo from 'laravel-echo'
+	require('jquery.backstretch');
+	require('jquery.backstretch/jquery.backstretch.min.js');
+	require('jquery.simple-text-rotator');
+	require('jquery.simple-text-rotator/simpletextrotator.css');
+	require('jquery-countto');
+	require('jquery-countto/jquery.countTo.js');
+	require('jquery-popup-overlay');
+	require('jquery-popup-overlay/jquery.popupoverlay');
+	require('owl.carousel');
+	require('owl.carousel/dist/assets/owl.theme.default.min.css');
+	require('waypoints/lib/jquery.waypoints.min.js');
+	require('wowjs');
+	require('wowjs/dist/wow.min.js');
+	require('smoothscroll');
+	require('smoothscroll/smoothscroll.min.js');
+	require('magnific-popup');
+	require('magnific-popup/dist/jquery.magnific-popup.min.js');
+	require('magnific-popup/dist/magnific-popup.css');
+	require('animate.css');
+	require('fitvids');
+	require('font-awesome/css/font-awesome.min.css');
 
-// window.Pusher = require('pusher-js');
+	require('public/manifest.json');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key',
-//     cluster: 'mt1',
-//     encrypted: true
-// });
+	requireAll(require.context('./theme/', true, /\.(js)$/));
+	requireAll(require.context('../public/', true, /\.(scss|png|jpg|gif|doc|docx|otf|eot|svg|ttf|woff|woff2)$/));
+};
+
+export default initialize;
