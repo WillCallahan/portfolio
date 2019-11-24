@@ -13,6 +13,7 @@ import Works from "../portfolio/Works";
 import Contact from "../portfolio/Contact";
 import Footer from "../portfolio/Footer";
 import Loader from "../portfolio/Loader";
+import Slider from "../portfolio/Slider";
 
 class App extends React.Component {
 
@@ -52,7 +53,7 @@ class App extends React.Component {
 				<Resume/>
 
 				{/*TODO This is broken; fix it*/}
-				{/*<Slider/>*/}
+				<Slider/>
 
 				<Works/>
 

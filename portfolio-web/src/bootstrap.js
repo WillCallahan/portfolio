@@ -1,8 +1,17 @@
 import $ from 'jquery'
+import WOW from 'wowjs'
 
 function requireAll(r) {
 	r.keys().forEach(r);
 }
+
+const initializeWow = () => {
+
+	let wow = new WOW.WOW({
+		mobile: false
+	});
+	wow.init();
+};
 
 const initialize = () => {
 	window._ = require('lodash');
@@ -34,8 +43,6 @@ const initialize = () => {
 	require('jquery-countto/jquery.countTo.js');
 	require('jquery-popup-overlay');
 	require('jquery-popup-overlay/jquery.popupoverlay');
-	require('owl.carousel');
-	require('owl.carousel/dist/assets/owl.theme.default.min.css');
 	require('waypoints/lib/jquery.waypoints.min.js');
 	require('wowjs');
 	require('wowjs/dist/wow.min.js');
@@ -52,6 +59,8 @@ const initialize = () => {
 
 	requireAll(require.context('./theme/', true, /\.(js)$/));
 	requireAll(require.context('../public/', true, /\.(scss|png|jpg|gif|doc|docx|otf|eot|svg|ttf|woff|woff2)$/));
+
+	initializeWow();
 };
 
 export default initialize;
