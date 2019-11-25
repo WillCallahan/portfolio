@@ -1,4 +1,6 @@
 ﻿using System;
+using Amazon.Lambda.APIGatewayEvents;
+using Newtonsoft.Json;
 using Portfolio.Lambda;
 using Portfolio.Lambda.Model;
 
@@ -8,12 +10,12 @@ namespace Portfolio.Console
     {
         public static void Main(string[] args)
         {
-            Environment.SetEnvironmentVariable("Sender.Email", "VALUE");
-            Environment.SetEnvironmentVariable("Sender.Name", "VALUE");
-            Environment.SetEnvironmentVariable("Sender.Username", "VALUE");
-            Environment.SetEnvironmentVariable("Sender.Password", "VALUE");
-            Environment.SetEnvironmentVariable("Sender.Host", "email-smtp.us-east-1.amazonaws.com");
-            Environment.SetEnvironmentVariable("Subject.Prefix", "TEST EMAIL - ");
+            Environment.SetEnvironmentVariable("SenderEmail", "VALUE");
+            Environment.SetEnvironmentVariable("SenderName", "VALUE");
+            Environment.SetEnvironmentVariable("SenderUsername", "VALUE");
+            Environment.SetEnvironmentVariable("SenderPassword", "VALUE");
+            Environment.SetEnvironmentVariable("SenderHost", "email-smtp.us-east-1.amazonaws.com");
+            Environment.SetEnvironmentVariable("SubjectPrefix", "TEST EMAIL - ");
 //            Environment.SetEnvironmentVariable("SesConfigurationSet", "ConfigurationSet");
             Environment.SetEnvironmentVariable("EnableSsl", "true");
             Environment.SetEnvironmentVariable("Port", "587");
@@ -25,7 +27,12 @@ namespace Portfolio.Console
                 Name = "John Doe"
             };
 
-            lambdaEntryPoint.SendEmail(request, new TestLambdaContext());
+            var apiRequest = new APIGatewayProxyRequest
+            {
+                Body = JsonConvert.SerializeObject(request)
+            };
+
+            lambdaEntryPoint.SendEmail(apiRequest, new TestLambdaContext());
         }
     }
 }

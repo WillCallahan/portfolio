@@ -1,0 +1,1 @@
+dotnet lambda package -c Release -f netcoreapp2.1 -o ./bin/Portfolio.Lambda.2019-11-24T1934.zip

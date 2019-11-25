@@ -2,15 +2,15 @@ using System;
 
 namespace Portfolio.Lambda.Model {
     public class Context {
-        public string SenderEmail => Environment.GetEnvironmentVariable("Sender.Email");
+        public string SenderEmail => Environment.GetEnvironmentVariable("SenderEmail");
 
-        public string SenderName => Environment.GetEnvironmentVariable("Sender.Name");
+        public string SenderName => Environment.GetEnvironmentVariable("SenderName");
 
-        public string Username => Environment.GetEnvironmentVariable("Sender.Username");
+        public string Username => Environment.GetEnvironmentVariable("SenderUsername");
 
-        public string Password => Environment.GetEnvironmentVariable("Sender.Password");
+        public string Password => Environment.GetEnvironmentVariable("SenderPassword");
 
-        public string Host => Environment.GetEnvironmentVariable("Sender.Host");
+        public string Host => Environment.GetEnvironmentVariable("SenderHost");
 
         public string SubjectPrefix => Environment.GetEnvironmentVariable("SubjectPrefix");
 
