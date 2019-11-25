@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Portfolio.Lambda.Model;
 
 namespace Portfolio.Lambda
@@ -14,15 +16,21 @@ namespace Portfolio.Lambda
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public APIGatewayProxyResponse SendEmail(APIGatewayProxyRequest apiRequest, ILambdaContext context) {
+            var jsonSerializerSettings = GetDefaultJsonSettings();
             try {
                 Console.WriteLine($"Processing SendEmail Request  RequestId={context.AwsRequestId}");
-                var request = JsonConvert.DeserializeObject<Request>(apiRequest.Body);
+                var request = JsonConvert.DeserializeObject<Request>(apiRequest.Body, jsonSerializerSettings);
                 SendEmailInternal(request);
                 var response = new Response(true);
                 var apiResponse = new APIGatewayProxyResponse {
-                    Body = JsonConvert.SerializeObject(response),
+                    Body = JsonConvert.SerializeObject(response, jsonSerializerSettings),
                     IsBase64Encoded = false,
-                    StatusCode = 200
+                    StatusCode = 200,
+                    Headers = new Dictionary<string, string>  {
+                        { "Access-Control-Allow-Origin", "*" },
+                        { "Access-Control-Allow-Methods", "OPTIONS, POST" },
+                        { "Access-Control-Allow-Headers", "*" },
+                    }
                 };
                 return apiResponse;
             }
@@ -31,9 +39,14 @@ namespace Portfolio.Lambda
                 Console.WriteLine(e.StackTrace);
                 var response = new Response(false);
                 var apiResponse = new APIGatewayProxyResponse {
-                    Body = JsonConvert.SerializeObject(response),
+                    Body = JsonConvert.SerializeObject(response, jsonSerializerSettings),
                     IsBase64Encoded = false,
-                    StatusCode = 500
+                    StatusCode = 500,
+                    Headers = new Dictionary<string, string> {
+                        { "Access-Control-Allow-Origin", "*" },
+                        { "Access-Control-Allow-Methods", "OPTIONS, POST" },
+                        { "Access-Control-Allow-Headers", "*" },
+                    }
                 };
                 return apiResponse;
             }
@@ -56,8 +69,7 @@ Message:
                 var message = new MailMessage {
                     IsBodyHtml = false,
                     From = new MailAddress(Context.SenderEmail, Context.SenderName),
-                    To = { new MailAddress(request.Email) },
-                    Bcc = { new MailAddress(Context.SenderEmail) },
+                    To = { new MailAddress(Context.SenderEmail) },
                     Subject = $"{Context.SubjectPrefix}{request.Name}",
                     Body = body
                 };
@@ -75,6 +87,19 @@ Message:
                 Console.WriteLine("Setting the X-SES-CONFIGURATION-SET header");
                 mailMessage.Headers.Add("X-SES-CONFIGURATION-SET", context.SesConfigurationSet);
             }
+        }
+
+        private static JsonSerializerSettings GetDefaultJsonSettings() {
+            var contractResolver = new DefaultContractResolver {
+                NamingStrategy = new CamelCaseNamingStrategy()
+            };
+            
+            var jsonSerializerSettings = new JsonSerializerSettings {
+                ContractResolver = contractResolver,
+                Formatting = Formatting.None
+            };
+
+            return jsonSerializerSettings;
         }
     }
 }

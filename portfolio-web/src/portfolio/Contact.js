@@ -52,11 +52,11 @@ class Contact extends React.Component {
 					email: "",
 					message: ""
 				},
-				validationMessage: (<p>{response.message}</p>)
+				validationMessage: (<p>Message Sent</p>)
 			});
 			$("#contact-form").toggle("slow");
 		}).fail((jqXHR) => {
-			_this.setState({validationMessage: (<p>{jqXHR.responseJSON.message}</p>)});
+			_this.setState({validationMessage: (<p>Failed to send message. Please try again.</p>)});
 		});
 	}
 

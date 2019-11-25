@@ -6,11 +6,19 @@ function requireAll(r) {
 }
 
 const initializeWow = () => {
-
 	let wow = new WOW.WOW({
 		mobile: false
 	});
 	wow.init();
+};
+
+const initializeAjax = () => {
+	console.log('Configuring ajax with api url ', API_URL);
+	$.ajaxSetup({
+		beforeSend: (xhr, settings) => {
+			settings.url = `${API_URL}/${settings.url}`;
+		}
+	});
 };
 
 const initialize = () => {
@@ -61,6 +69,7 @@ const initialize = () => {
 	requireAll(require.context('../public/', true, /\.(scss|png|jpg|gif|doc|docx|otf|eot|svg|ttf|woff|woff2)$/));
 
 	initializeWow();
+	initializeAjax();
 };
 
 export default initialize;

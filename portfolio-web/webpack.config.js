@@ -1,7 +1,12 @@
 const path = require('path');
 const HWP = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const {ProvidePlugin} = require('webpack');
+const {ProvidePlugin, DefinePlugin} = require('webpack');
+const { getConfig } = require('./config/config');
+
+const configuration = getConfig();
+
+console.info('Retrieved configuration', configuration);
 
 module.exports = {
 	entry: './src/index.js',
@@ -24,8 +29,8 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: '/',    // where the fonts will go
-							publicPath: '../'       // override the default path
+							outputPath: '/',
+							publicPath: '../'
 						}
 					}
 				]
@@ -38,8 +43,7 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							name: '[name].[ext]',
-							outputPath: '/images',    // where the fonts will go
-							// publicPath: '../'       // override the default path
+							outputPath: '/images'
 						}
 					}
 				]
@@ -52,15 +56,11 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							name: '[path][name].[ext]',
-							outputPath: '/',    // where the fonts will go
+							outputPath: '/'
 						}
 					}
 				]
-			},
-			// {
-			// 	test: /\.(jpg|gif|png)$/,
-			// 	loader: "url-loader?limit=25000"
-			// }
+			}
 		]
 	},
 	resolve: {
@@ -86,6 +86,7 @@ module.exports = {
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery'
-		})
+		}),
+		new DefinePlugin(configuration)
 	]
 };

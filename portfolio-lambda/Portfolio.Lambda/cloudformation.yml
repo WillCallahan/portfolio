@@ -35,8 +35,18 @@ Parameters:
     Description: SES Host Port Number
     
 Resources:
+  PortfolioApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: Portfolio API Gateway
+      StageName: Prod
+      Cors:
+        AllowMethods: "'POST,OPTIONS'"
+        AllowHeaders: "'*'"
+        AllowOrigin: "'*'"
+  
   PortfolioFunction:
-    Type: 'AWS::Serverless::Function'
+    Type: AWS::Serverless::Function
     Properties:
       Runtime: dotnetcore2.1
       Handler: Portfolio.Lambda::Portfolio.Lambda.LambdaEntryPoint::SendEmail
@@ -60,7 +70,8 @@ Resources:
         PortfolioApi:
           Type: Api
           Properties:
-            Path: /
+            RestApiId: !Ref PortfolioApiGateway
+            Path: /api/contacts
             Method: POST
 
 #Outputs:
