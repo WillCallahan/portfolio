@@ -13,7 +13,7 @@ namespace Portfolio.Console
             Environment.SetEnvironmentVariable("Sender.Username", "VALUE");
             Environment.SetEnvironmentVariable("Sender.Password", "VALUE");
             Environment.SetEnvironmentVariable("Sender.Host", "email-smtp.us-east-1.amazonaws.com");
-            Environment.SetEnvironmentVariable("SubjectPrefix", "TEST EMAIL - ");
+            Environment.SetEnvironmentVariable("Subject.Prefix", "TEST EMAIL - ");
 //            Environment.SetEnvironmentVariable("SesConfigurationSet", "ConfigurationSet");
             Environment.SetEnvironmentVariable("EnableSsl", "true");
             Environment.SetEnvironmentVariable("Port", "587");
