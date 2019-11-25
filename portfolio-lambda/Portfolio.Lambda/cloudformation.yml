@@ -1,0 +1,70 @@
+Transform: 'AWS::Serverless-2016-10-31'
+Parameters:
+  CoseS3Bucket:
+    Type: String
+    Description: S3 Bucket where code is stored
+  CodeS3Key:
+    Type: String
+    Description: S3 Key to where the code is stored
+  SenderEmail:
+    Type: String
+    Description: SES Verified Sender Email
+  SenderName:
+    Type: String
+    Description: Email Sender Name
+  SenderUsername:
+    Type: String
+    Description: SES Access Key Id
+  SenderPassword:
+    Type: String
+    Description: SES Secret Access Key
+  SenderHost:
+    Type: String
+    Default: email-smtp.us-east-1.amazonaws.com
+    Description: SES Host
+  SubjectPrefix:
+    Type: String
+    Description: Email Subject Prefix
+  EnableSsl:
+    Type: String
+    Default: true
+    Description: Whether or not to enable SSL
+  Port:
+    Type: Number
+    Default: 587
+    Description: SES Host Port Number
+    
+Resources:
+  PortfolioFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Runtime: dotnetcore2.1
+      Handler: Portfolio.Lambda::Portfolio.Lambda.LambdaEntryPoint::SendEmail
+      CodeUri:
+        Bucket: !Ref CoseS3Bucket
+        Key: !Ref CodeS3Key
+      Timeout: 15
+      MemorySize: 128
+      Role: null
+      Environment:
+        Variables:
+          SenderEmail: !Ref SenderEmail
+          SenderName: !Ref SenderName
+          SenderUsername: !Ref SenderUsername
+          SenderPassword: !Ref SenderPassword
+          SenderHost: !Ref SenderHost
+          SenderPrefix: !Ref SubjectPrefix
+          EnableSsl: !Ref EnableSsl
+          Port: !Ref Port
+      Events:
+        PortfolioApi:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST
+
+#Outputs:
+#  PortfolioApi:
+#    Description: API Gateway endpoint for the portfolio api
+#    Value: !Sub "https://${PortfolioApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
