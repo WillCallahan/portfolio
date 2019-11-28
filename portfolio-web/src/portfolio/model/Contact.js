@@ -1,9 +1,9 @@
 class Contact {
 
-	constructor(subject, email, message) {
-		this.subject = subject;
-		this.email = email;
-		this.message = message;
+	constructor(name, email, message) {
+		this.name = name || "";
+		this.email = email || "";
+		this.message = message || "";
 	}
 
 }

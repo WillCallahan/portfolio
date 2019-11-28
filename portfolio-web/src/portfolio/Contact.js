@@ -9,11 +9,7 @@ class Contact extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			contactForm: {
-				name: "",
-				email: "",
-				message: ""
-			},
+			contactForm: new ContactModel(),
 			loading: false,
 			validationMessage: ""
 		};
@@ -44,14 +40,10 @@ class Contact extends React.Component {
 	 */
 	sendEmail(name, email, message) {
 		let _this = this;
-		let contact = new ContactModel("Portfolio Request - " + name, email, message);
+		let contact = new ContactModel(name, email, message);
 		$.when(this.contactRepository.save(contact)).done((response) => {
 			_this.setState({
-				contactForm: {
-					name: "",
-					email: "",
-					message: ""
-				},
+				contactForm: new ContactModel(),
 				validationMessage: (<p>Message Sent</p>)
 			});
 			$("#contact-form").toggle("slow");
