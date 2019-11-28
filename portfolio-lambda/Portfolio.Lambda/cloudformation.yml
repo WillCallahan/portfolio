@@ -43,11 +43,15 @@ Resources:
     Properties:
       Name: !Sub ${AWS::StackName}-api
       StageName: Prod
-      MethodSettings:
-        - ThrottlingBurstLimit: 15
-          ThrottlingRateLimit: 5.0
-          HttpMethod: POST
-          ResourcePath: /api/contacts
+      # MethodSettings:
+      #   - ThrottlingBurstLimit: 15
+      #     ThrottlingRateLimit: 5.0
+      #     HttpMethod: POST
+      #     ResourcePath: /api/contacts
+      #     MetricsEnabled: false
+      #     DataTraceEnabled: false
+      #     CachingEnabled: false
+      #     CacheDataEncrypted: false
       Cors:
         AllowMethods: "'POST,OPTIONS'"
         AllowHeaders: "'*'"
@@ -56,7 +60,7 @@ Resources:
   PortfolioFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub ${AWS::StackName}-lambda
+      # FunctionName: !Sub ${AWS::StackName}-lambda
       Runtime: dotnetcore2.1
       Handler: Portfolio.Lambda::Portfolio.Lambda.LambdaEntryPoint::SendEmail
       CodeUri:
