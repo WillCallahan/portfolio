@@ -72,7 +72,7 @@ Resources:
           SenderUsername: !Ref SenderUsername
           SenderPassword: !Ref SenderPassword
           SenderHost: !Ref SenderHost
-          SenderPrefix: !Ref SubjectPrefix
+          SubjectPrefix: !Ref SubjectPrefix
           EnableSsl: !Ref EnableSsl
           Port: !Ref Port
       Events:
