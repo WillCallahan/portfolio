@@ -1,4 +1,7 @@
+AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
+Description: >
+  Personal Portfolio Stack
 Parameters:
   CoseS3Bucket:
     Type: String
@@ -38,8 +41,13 @@ Resources:
   PortfolioApiGateway:
     Type: AWS::Serverless::Api
     Properties:
-      Name: Portfolio API Gateway
+      Name: !Sub ${AWS::StackName}-api
       StageName: Prod
+      MethodSettings:
+        - ThrottlingBurstLimit: 15
+          ThrottlingRateLimit: 5.0
+          HttpMethod: POST
+          ResourcePath: /api/contacts
       Cors:
         AllowMethods: "'POST,OPTIONS'"
         AllowHeaders: "'*'"
@@ -48,6 +56,7 @@ Resources:
   PortfolioFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Sub ${AWS::StackName}-lambda
       Runtime: dotnetcore2.1
       Handler: Portfolio.Lambda::Portfolio.Lambda.LambdaEntryPoint::SendEmail
       CodeUri:
@@ -74,8 +83,8 @@ Resources:
             Path: /api/contacts
             Method: POST
 
-#Outputs:
-#  PortfolioApi:
-#    Description: API Gateway endpoint for the portfolio api
-#    Value: !Sub "https://${PortfolioApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+Outputs:
+ PortfolioApi:
+   Description: API Gateway endpoint for the portfolio api
+   Value: !Sub https://${PortfolioApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Prod/
 
