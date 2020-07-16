@@ -12,6 +12,8 @@ namespace Portfolio.Lambda
 {
     public class LambdaEntryPoint
     {
+        private const int MinimumWords = 5;
+        
         private static readonly Context Context = new Context();
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -20,7 +22,15 @@ namespace Portfolio.Lambda
             try {
                 Console.WriteLine($"Processing SendEmail Request  RequestId={context.AwsRequestId}");
                 var request = JsonConvert.DeserializeObject<Request>(apiRequest.Body, jsonSerializerSettings);
-                SendEmailInternal(request);
+                
+                var isValidEmail = IsValidEmail(request);
+                if (isValidEmail) {
+                    SendEmailInternal(request);
+                }
+                else {
+                    Console.WriteLine($"Refusing to send email; message is likely spam.  Name={request.Name} Email={request.Email} Message={request.Message}");
+                }
+                
                 var response = new Response(true);
                 var apiResponse = new APIGatewayProxyResponse {
                     Body = JsonConvert.SerializeObject(response, jsonSerializerSettings),
@@ -100,6 +110,19 @@ Message:
             };
 
             return jsonSerializerSettings;
+        }
+
+        private bool IsValidEmail(Request request) {
+            if (request == null) {
+                return false;
+            }
+            
+            var words = request.Message.Trim().Split(" ").Length;
+            if (words < MinimumWords) {
+                return false;
+            }
+
+            return true;
         }
     }
 }
