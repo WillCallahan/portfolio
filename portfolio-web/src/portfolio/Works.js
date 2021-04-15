@@ -83,7 +83,7 @@ class Works extends React.Component {
 
     render() {
         return (
-            <section id="portfolio" className="section">
+            <section id="portfolio" className="callout">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 headline wow bounceInDown">

@@ -24,7 +24,7 @@ class Slider extends React.Component {
 
 	render() {
 		return (
-			<section id="clients" className="callout">
+			<section id="clients" className="section">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-3 hidden-xs wow bounceInLeft">

@@ -8,7 +8,7 @@ class Certifications extends React.Component {
             <section className="callout">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3 hidden-xs wow bounceInLeft">
+                        <div className="col-md-3 wow bounceInLeft">
                             <h3>{this.props.title}</h3>
                         </div>
                         <div className="col-md-9 headline nomargin wow bounceInDown">
