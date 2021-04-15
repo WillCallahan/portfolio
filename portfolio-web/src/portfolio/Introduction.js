@@ -47,10 +47,11 @@ class Introduction extends React.Component {
 Introduction.defaultProps = {
     name: "William Callahan",
     skills: [
-        "Java Engineer",
         "C# Engineer",
-        "PHP Engineer",
+        "AWS Certified",
         "Python Engineer",
+        "Java Engineer",
+        "PHP Engineer",
         "HTML/CSS/JavaScript Developer",
     ],
 	images: [

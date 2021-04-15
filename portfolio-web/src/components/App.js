@@ -14,6 +14,7 @@ import Contact from "../portfolio/Contact";
 import Footer from "../portfolio/Footer";
 import Loader from "../portfolio/Loader";
 import Slider from "../portfolio/Slider";
+import Certifications from "../portfolio/Certifications";
 
 class App extends React.Component {
 
@@ -47,6 +48,8 @@ class App extends React.Component {
 				<Stats/>
 
 				<Capabilities/>
+
+				<Certifications/>
 
 				<Status descriptionTitle={"Currently Unavailable"} description={<p>I am not currently looking for freelance work or new positions.</p>}/>
 

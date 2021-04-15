@@ -96,10 +96,10 @@ Profile.defaultProps = {
 	name: "William Callahan",
 	overallSkills: "Full Stack Development. AWS Configuration. Framework Experience.",
 	skillSet: {
-		"Java": 5,
+		"C#": 5,
 		"Python": 4,
 		"HTML/CSS/JavaScript": 4,
-		"C#": 3,
+		"Java": 4,
 	},
 	socialProfiles: {
 		"facebook": null,
