@@ -13,23 +13,23 @@ class Certifications extends React.Component {
                         </div>
                         <div className="col-md-9 headline nomargin wow bounceInDown">
                             <div className="col-sm-3 wow bounceInLeft">
-                                <a href='https://www.credly.com/badges/3568fd60-72d2-472a-b9f6-c6ff4ea1119e/public_url'>
-                                    <img src='https://images.credly.com/size/340x340/images/7fbb805d-ea82-4276-a227-e63121a2844b/AWS-DevOpsEngineer-Professional-2020.png' alt='AWS DevOps Engineer Professional'/>
+                                <a href='https://www.credly.com/badges/016865e2-b72c-4902-b66f-3245ca28f0c6/public_url'>
+                                    <img src='https://images.credly.com/size/340x340/images/bd31ef42-d460-493e-8503-39592aaf0458/image.png' alt='AWS DevOps Engineer - Professional'/>
                                 </a>
                             </div>
                             <div className="col-sm-3 wow bounceInLeft">
-                                <a href='https://www.credly.com/badges/e57191a4-236b-4912-8f3c-690a81c336ef/public_url'>
-                                    <img src='https://images.credly.com/size/340x340/images/598f6ac6-2dbd-4394-8ae4-943b2f4c43ea/AWS-Developer-Associate-2020.png' alt='AWS Certified Developer Associate'/>
+                                <a href='https://www.credly.com/badges/5cf894cd-26ea-42ef-a1bc-5beffc24069a/public_url'>
+                                    <img src='https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png' alt='AWS Certified Developer - Associate'/>
                                 </a>
                             </div>
                             <div className="col-sm-3 wow bounceInLeft">
-                                <a href='https://www.credly.com/badges/681b495c-2597-4cca-bfe3-3bbd9dbb4efe/public_url'>
-                                    <img src='https://images.credly.com/size/340x340/images/4bc21d8b-4afe-4fbd-9a90-a9de8bf7b240/AWS-SolArchitect-Associate-2020.png' alt='AWS Certified Solutions Architect Associate'/>
+                                <a href='https://www.credly.com/badges/43985452-3957-4198-85de-da24f3ca18f6/public_url'>
+                                    <img src='https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png' alt='AWS Certified Security - Specialty'/>
                                 </a>
                             </div>
                             <div className="col-sm-3 wow bounceInLeft">
-                                <a href='https://www.credly.com/badges/617b8512-adce-42a0-aaa0-18934524a459/public_url'>
-                                    <img src='https://images.credly.com/size/340x340/images/68468004-5a85-4f3b-bc58-590773979486/AWS-CloudPractitioner-2020.png' alt='AWS Cloud Practitioner'/>
+                                <a href='https://www.credly.com/badges/77ea2c61-09f5-4044-8c9e-f6f876b9bb37/public_url'>
+                                    <img src='https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png' alt='AWS Cloud Practitioner'/>
                                 </a>
                             </div>
                         </div>
