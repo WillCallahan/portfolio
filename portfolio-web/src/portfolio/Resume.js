@@ -43,6 +43,19 @@ Resume.defaultProps = {
         React.createElement(ResumeSection, {
             title: "Education", resumeItems: [
                 React.createElement(ResumeItem, {
+                    title: "MS in Data Science (In Progress)",
+                    description: (
+                        <ul>
+							<li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
+							<li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
+                        </ul>
+                    ),
+                    company: "Stevens Institute of Technology",
+                    date: "2023 - Current",
+					icon: "fa-area-chart",
+                    offset: false
+                }),
+                React.createElement(ResumeItem, {
                     title: "BS in Computer science, Minor in Security",
                     description: (
                         <ul>
@@ -52,13 +65,35 @@ Resume.defaultProps = {
                     ),
                     company: "WCSU",
                     date: "2012 - 2017",
-					icon: "fa-graduation-cap",
-					offset: false
+					icon: "fa-graduation-cap"
                 }),
             ]
         }),
         React.createElement(ResumeSection, {
             title: "Experience", resumeItems: [
+                React.createElement(ResumeItem, {
+                    title: "Cloud Engineer",
+                    description: (
+                        <ul>
+							<li>Develop and maintain AWS and Azure cloud infrastructure</li>
+                            <li>Solution large scale elastic application environments</li>
+                        </ul>
+                    ),
+                    company: "ThorTech Solutions",
+                    date: "2017 - Current",
+					offset: false
+                }),
+                React.createElement(ResumeItem, {
+                    title: "Squad Leader",
+                    description: (
+                        <ul>
+							<li>Responsible for the development and welfare of a squad of eight soldiers.</li>
+                            <li>Received ARCOM award for outstanding efforts during overseas deployment.</li>
+                        </ul>
+                    ),
+                    company: "US Army National Guard",
+                    date: "2013 - 2022"
+                }),
                 React.createElement(ResumeItem, {
                     title: "Backend Developer",
                     description: (
@@ -71,8 +106,7 @@ Resume.defaultProps = {
                         </ul>
                     ),
                     company: "United Nations",
-                    date: "2014 - 2017",
-					offset: false
+                    date: "2014 - 2017"
                 }),
                 React.createElement(ResumeItem, {
                     title: "Lead Team Software Developer",

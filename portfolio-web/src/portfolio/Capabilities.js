@@ -50,12 +50,24 @@ Capabilities.defaultProps = {
     title: "What I can do",
     description: null,
     capabilities: [
-		React.createElement(Capability, {title: "Full Stack", description: <p>Working as a full-stack developer to maintain all aspects of an application.</p>, icon: "fa-server"}),
-		React.createElement(Capability, {title: "REST Services", description: <p>Building REST APIs that adhere to proper RESTful Web Service Standards.</p>, icon: "fa-retweet"}),
-		React.createElement(Capability, {title: "Agile", description: <p>Working in fast-paced agile development environments</p>, icon: "fa-group"}),
-		React.createElement(Capability, {title: "Responsive Design", description: <p>Creating web applications that are both mobile and user friendly.</p>, icon: "fa-desktop"}),
-		React.createElement(Capability, {title: "Server Configuration", description: <p>Configuring AWS, Windows, and Linux Servers for hosting applications.</p>, icon: "fa-cogs"}),
-        React.createElement(Capability, {title: "Support", description: <p>Providing full-lifecycle development.</p>, icon: "fa-life-ring"}),
+        <Capability title={"Cloud Services"}
+            description={<p>Building Cloud First and Hybrid Cloud Environment Infrastructure</p>}
+            icon={"fa-cloud"}/>,
+        <Capability title={"Full Stack"}
+            description={<p>Working as a full-stack developer to maintain all aspects of an application.</p>}
+            icon={"fa-server"}/>,
+        <Capability title={"REST Services"}
+            description={<p>Building REST APIs that adhere to proper RESTful Web Service Standards.</p>}
+            icon={"fa-retweet"}/>,
+        <Capability title={"Agile"}
+            description={<p>Working in fast-paced agile development environments</p>}
+            icon={"fa-group"}/>,
+        <Capability title={"Responsive Design"}
+            description={<p>Creating web applications that are both mobile and user friendly.</p>}
+            icon={"fa-desktop"}/>,
+        <Capability title={"Server Configuration"}
+            description={<p>Configuring AWS, Windows, and Linux Servers for hosting applications.</p>}
+            icon={"fa-cogs"}/>,
     ],
     itemsPerRow: 3
 };

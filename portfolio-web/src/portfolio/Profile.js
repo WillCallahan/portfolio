@@ -65,7 +65,7 @@ class Profile extends React.Component {
 							<p>{this.props.overallSkills}</p>
 						</div>
 						<div className="col-md-3 col-sm-6 hidden-xs wow bounceInLeft">
-							<img className="avatar" src={this.props.image} alt=""/>
+							<img className="img-rounded" src={this.props.image} alt=""/>
 						</div>
 						<div className="col-md-3 col-sm-6 wow bounceInUp">
 							<div className="profile-widget">
@@ -83,6 +83,8 @@ class Profile extends React.Component {
 						<div className="col-md-6 col-sm-12 wow bounceInRight">
 							<h3>{this.props.descriptionTitle}</h3>
 							{this.props.description}
+							<h3>Military Veteran</h3>
+							<p>9-years of service in the US Army</p>
 						</div>
 					</div>
 				</div>
@@ -110,7 +112,7 @@ Profile.defaultProps = {
 	},
 	image: "/public/images/theme/photo.jpg",
 	descriptionTitle: "Professional Profile",
-	description: <p>Motivated and experienced full stack software developer. Strong competencies in Java SE/EE, C#, Python, Spring, JPA, Oracle, HTML, CSS, and JavaScript.</p>
+	description: <p>Motivated and experienced AWS Cloud Engineer. Strong competencies in application development, infrastructure, and large-scale applications.</p>
 };
 
 Profile.propTypes = {
