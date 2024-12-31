@@ -10,7 +10,7 @@ class Stat extends React.Component {
 
     render() {
         return (
-            <div className="stat">
+            <div className="stat" data-aos="slide-up">
                 <div className="stat-icon">
                     <h2>
                         <i className={"fa " + this.props.icon + " hidden-xs"}/><span className="timer" data-to={this.props.value}/>{this.props.postfix}

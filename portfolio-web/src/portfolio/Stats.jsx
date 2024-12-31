@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Stat from "./Stat";
 import $ from 'jquery';
+import 'waypoints/lib/jquery.waypoints.js'
 
 class Stats extends React.Component {
 

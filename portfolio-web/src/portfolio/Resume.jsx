@@ -13,7 +13,7 @@ class Resume extends React.Component {
 
     render() {
         return (
-            <section id="resume" className="callout">
+            <section id="resume" className="callout" data-aos="fade-up">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 headline wow bounceInDown">

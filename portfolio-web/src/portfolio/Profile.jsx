@@ -64,10 +64,10 @@ class Profile extends React.Component {
 							<h2>{this.props.name}</h2>
 							<p>{this.props.overallSkills}</p>
 						</div>
-						<div className="col-md-3 col-sm-6 hidden-xs wow bounceInLeft">
+						<div className="col-md-3 col-sm-6 hidden-xs" data-aos="fade-right">
 							<img className="img-rounded" src={this.props.image} alt=""/>
 						</div>
-						<div className="col-md-3 col-sm-6 wow bounceInUp">
+						<div className="col-md-3 col-sm-6" data-aos="fade-up">
 							<div className="profile-widget">
 								<h3>Skillset</h3>
 								{this.getSkillSet()}
@@ -80,7 +80,7 @@ class Profile extends React.Component {
 								</ul>
 							</div>
 						</div>
-						<div className="col-md-6 col-sm-12 wow bounceInRight">
+						<div className="col-md-6 col-sm-12" data-aos="fade-left">
 							<h3>{this.props.descriptionTitle}</h3>
 							{this.props.description}
 							<h3>Military Veteran</h3>

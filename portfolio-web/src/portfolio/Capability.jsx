@@ -16,7 +16,7 @@ class Capability extends React.Component {
 
     render() {
         return (
-            <div className="service">
+            <div className="service" data-aos="fade-up">
                 {this.getIcon()}
                 <h4>{this.props.title}</h4>
                 <div className="text">

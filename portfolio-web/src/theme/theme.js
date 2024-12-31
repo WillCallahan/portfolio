@@ -5,16 +5,17 @@
 	/* ---------------------------------------------- */
 
 	$(window).ready(function () {
-		$('#status').fadeOut();
+		$('#status').delay(350).fadeOut('slow');
 		$('#preloader').delay(350).fadeOut('slow');
 	});
 
 	$(document).ready(function () {
 
-		$('body').scrollspy({
-			target: '.navbar-custom',
-			offset: 50
-		});
+		// TODO FIX This
+		// $('body').scrollSpy({
+		// 	target: '.navbar-custom',
+		// 	offset: 50
+		// });
 
 		$(document).on('click', '.navbar-collapse.in', function (e) {
 			if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
@@ -39,7 +40,8 @@
 		 * A jQuery plugin for fluid width video embeds
 		/* ---------------------------------------------- */
 
-		$(".video").fitVids();
+		// TODO Support this
+		// $(".video").fitVids();
 
 	});
 

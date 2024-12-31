@@ -62,7 +62,7 @@ class App extends React.Component {
 
 				<Contact/>
 
-				<Footer description={<span>&copy; 2017 {this.props.name}, All Rights Reserved.</span>} github={this.props.repository}/>
+				<Footer description={<span>&copy; 2025 {this.props.name}, All Rights Reserved.</span>} github={this.props.repository}/>
 
 			</div>
 		);

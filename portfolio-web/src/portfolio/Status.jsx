@@ -5,7 +5,7 @@ class Status extends React.Component {
 
     render() {
         return (
-            <section className="section">
+            <section className="section" data-aos="fade-left">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 hidden-xs wow bounceInLeft">

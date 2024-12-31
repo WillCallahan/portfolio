@@ -24,7 +24,7 @@ class Introduction extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="hello wow bounceInDown">
+                            <div className="hello" data-aos="fade-up">
                                 <h1>Hi, I'm {this.props.name}</h1>
                                 <h3>
                                     <span className="rotate">{this.props.skills.join(" | ")}</span>
