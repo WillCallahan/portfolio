@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import $ from "jquery";
 import Work from "./Work";
 import ArrayUtility from "./utility/ArrayUtility";
 
@@ -34,51 +33,46 @@ class Works extends React.Component {
         	let worksElements = works.map(function(work, o) {
         		return (<div key={"work" + work.props.title} className={"col-md-4 col-sm-6 wow " + Works.getAnimation((i * this.props.worksPerRow) + o)} data-wow-delay={Works.getDelay((i * this.props.worksPerRow) + o)}>{work}</div>);
 			}, this);
-			return (<div key={"worksRow" + i} className="row">{worksElements}</div>);
+			return (<div data-aos="slide-up" key={"worksRow" + i} className="row">{worksElements}</div>);
         }, this);
     }
 
     componentDidMount() {
-		// $('#portfolio').magnificPopup({
-		// 	delegate: 'a.pop-up',
-		// 	type: 'image',
-		// 	gallery: {
-		// 		enabled: true,
-		// 		navigateByImgClick: true,
-		// 		preload: [0, 1]
-		// 	},
-		// 	image: {
-		// 		titleSrc: 'title',
-		// 		tError: 'The image could not be loaded.',
-		// 	}
-		// });
-        //
-		// $('.video-pop-up').magnificPopup({
-		// 	type: 'iframe',
-		// 	srcAction: 'iframe_src'
-		// });
-        //
-		// $('.iframe-pop-up').magnificPopup({
-		// 	key: 'pop-up-iframe',
-		// 	type: 'iframe',
-		// 	preloader: true,
-		// 	tLoading: '',
-		// 	iframe: {
-		// 		markup: '<div class="mfp-iframe-scaler pop-up-iframe"><div class="mfp-close"></div><iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe></div>',
-		// 	},
-		// 	gallery: {
-		// 		enabled: true
-		// 	},
-		// 	callbacks: {
-		// 		open: function(arg) {
-		// 			let _this = this;
-		// 			this.updateStatus('loading', '');
-		// 			$(this.content).find("iframe.mfp-iframe").load(function() {
-		// 				_this.updateStatus('ready', '');
-		// 			});
-		// 		}
-		// 	}
-		// });
+		$('#portfolio').magnificPopup({
+			delegate: 'a.pop-up',
+			type: 'image',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0, 1]
+			},
+			image: {
+				titleSrc: 'title',
+				tError: 'The image could not be loaded.',
+			}
+		});
+
+		$('.iframe-pop-up').magnificPopup({
+			key: 'pop-up-iframe',
+			type: 'iframe',
+			preloader: true,
+			tLoading: '',
+			iframe: {
+				markup: '<div class="mfp-iframe-scaler pop-up-iframe"><div class="mfp-close"></div><iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe></div>',
+			},
+			gallery: {
+				enabled: true
+			},
+			callbacks: {
+				open: function(arg) {
+					let _this = this;
+					this.updateStatus('loading', '');
+					$(this.content).find("iframe.mfp-iframe").load(function() {
+						_this.updateStatus('ready', '');
+					});
+				}
+			}
+		});
     }
 
     render() {
@@ -100,7 +94,7 @@ class Works extends React.Component {
 }
 
 Works.defaultProps = {
-    title: "Portfolio",
+    title: "Samples",
     description: null,
     works: [
         React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/", image: "/public/images/portfolio/VisionsConstructionLLC.jpg"},),

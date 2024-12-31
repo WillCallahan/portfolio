@@ -55,7 +55,6 @@ class App extends React.Component {
 
 				<Resume/>
 
-				{/*TODO This is broken; fix it*/}
 				<Slider/>
 
 				<Works/>

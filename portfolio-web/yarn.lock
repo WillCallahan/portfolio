@@ -824,7 +824,7 @@ classlist-polyfill@^1.0.3:
   resolved "https://registry.yarnpkg.com/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz#935bc2dfd9458a876b279617514638bcaa964a2e"
   integrity sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ==
 
-classnames@^2.2.5:
+classnames@^2.1.2, classnames@^2.2.5:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
   integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
@@ -2024,10 +2024,23 @@ react-dom@^18.3.1:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
+react-gist@^1.1.0:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-gist/-/react-gist-1.2.4.tgz#4ee71f24cc6f60836354e2ad6e30f6d24e06e0f7"
+  integrity sha512-uDgPJ08IJsl/7auK3CS53JKGC1P/X7tNCzo9k0r6D/5l+ilsxE1+SAaylJCh0aeyZoJOoxQikKU+MHsAvA9iFw==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-magnific-popup@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-magnific-popup/-/react-magnific-popup-1.0.1.tgz#2ab568010ca3ab793fadf9b5d42f47e6794b8afc"
+  integrity sha512-Spn7jCQSC54ZImSLKJ/83qzjcto5rSZ2zSJti5tA8rKht8jSsKjno/dsyjkJbJ+yEaP3Q6b/ieAVunMv1RcqXw==
+  dependencies:
+    classnames "^2.1.2"
+    react-gist "^1.1.0"
 
 react-owl-carousel@^2.3.3:
   version "2.3.3"

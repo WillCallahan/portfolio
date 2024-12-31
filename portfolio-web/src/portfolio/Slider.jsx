@@ -23,9 +23,9 @@ class Slider extends React.Component {
 	render() {
 		return (
 			<section id="clients" className="section">
-				<div className="container">
+				<div className="container" data-aos="slide-left">
 					<div className="row">
-						<div className="col-md-3 hidden-xs wow bounceInLeft">
+						<div className="col-md-3 hidden-xs">
 							<h3>{this.props.title}</h3>
 							{this.props.description ? <p>{this.props.description}</p> : ""}
 						</div>

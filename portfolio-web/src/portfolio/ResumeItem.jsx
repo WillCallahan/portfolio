@@ -9,7 +9,7 @@ class ResumeItem extends React.Component {
 
     render() {
         return (
-            <div>
+            <div data-aos="slide-left">
                 <div className={"col-md-6 col-sm-8 resume-item wow bounceInUp " + (this.props.offset ? "col-md-offset-3" : "")}>
                     <h4>{this.props.title}</h4>
                     {this.props.description}

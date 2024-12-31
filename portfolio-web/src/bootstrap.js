@@ -11,6 +11,7 @@ import 'jquery-popup-overlay'
 import 'smoothscroll'
 import 'smoothscroll/smoothscroll.min.js'
 import 'magnific-popup'
+import 'magnific-popup/dist/magnific-popup.css'
 import 'animate.css'
 import 'fitvids'
 import 'font-awesome/css/font-awesome.min.css'
@@ -27,7 +28,7 @@ import './theme/theme.js'
 const initializeWow = () => {
 	AOS.init({
 		mobile: false,
-		resetAnimation: true
+		once: true
 	})
 };
 

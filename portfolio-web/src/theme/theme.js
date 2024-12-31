@@ -36,13 +36,6 @@
 			e.preventDefault();
 		});
 
-		/* ---------------------------------------------- /*
-		 * A jQuery plugin for fluid width video embeds
-		/* ---------------------------------------------- */
-
-		// TODO Support this
-		// $(".video").fitVids();
-
 	});
 
 })(jQuery);
