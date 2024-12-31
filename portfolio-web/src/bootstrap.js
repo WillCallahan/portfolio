@@ -1,18 +1,12 @@
 import $ from 'jquery'
-import WOW from 'wowjs'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import _ from 'lodash'
-// window._ = _;
-// window.jQuery = window.$ = $
 Object.assign(window, { $: jQuery, jQuery });
 import 'bootstrap'
 import 'jquery.backstretch'
-// import 'jquery.backstretch/jquery.backstretch.min.js'
 import 'jquery.simple-text-rotator'
 import 'jquery.simple-text-rotator/simpletextrotator.css'
 import 'jquery-countto'
-// import 'jquery-countto/jquery.countTo.js'
 import 'jquery-popup-overlay'
 import 'smoothscroll'
 import 'smoothscroll/smoothscroll.min.js'
@@ -21,6 +15,9 @@ import 'animate.css'
 import 'fitvids'
 import 'font-awesome/css/font-awesome.min.css'
 import '@popperjs/core'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 import '/public/sass/theme.scss'
 import '/public/sass/app.scss'

@@ -1,9 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import SliderItem from "./SliderItem";
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { default as ReactSlider } from "react-slick";
 
 class Slider extends React.Component {
 
@@ -15,7 +13,7 @@ class Slider extends React.Component {
 	getClients() {
 		return this.props.clients.map(function (client) {
 			return (
-				<div className={"item"} key={"client" + client.props.title}>
+				<div className={""} key={"client" + client.props.title}>
 					{client}
 				</div>
 			);
@@ -31,10 +29,10 @@ class Slider extends React.Component {
 							<h3>{this.props.title}</h3>
 							{this.props.description ? <p>{this.props.description}</p> : ""}
 						</div>
-						<div className="col-md-9 wow bounceInRight">
-							<OwlCarousel className="owl-theme" items={4} margin={25} autoplay autoplayTimeout={1000} autoplaySpeed={600} loop autoWidth>
+						<div className="col-md-9">
+							<ReactSlider infinite={true} slidesToShow={4} speed={400} autoplaySpeed={1000} autoplay>
 								{this.getClients()}
-							</OwlCarousel>
+							</ReactSlider>
 						</div>
 					</div>
 				</div>

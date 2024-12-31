@@ -17,9 +17,9 @@ class SliderItem extends React.Component {
 
     render() {
         return (
-            <div>
-				<img src={this.props.image} alt={this.props.imageAlt || this.props.title} />
-                <h4 className="text-center">{this.props.title}</h4>
+            <div className="text-center">
+				<img className="inline-block" src={this.props.image} alt={this.props.imageAlt || this.props.title} />
+                <h4>{this.props.title}</h4>
             </div>
         );
     }

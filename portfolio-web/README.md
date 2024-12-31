@@ -7,6 +7,15 @@ yarn install --check-files
 ## Running
 
 ```shell
-yarn build
-npm run start
+yarn run dev
 ```
+
+## Deployment
+
+```shell
+yarn run build
+```
+
+## Dependencies
+
+- NodeJS 22
