@@ -12,10 +12,7 @@ export default defineConfig({
     }),
   ],
   define: {
-    API_URL: JSON.stringify('https://alc7jm51ph.execute-api.us-east-1.amazonaws.com/Prod'),
-    // 'window.jQuery': 'jquery',
-    // 'window.$': 'jquery',
-    // '$': 'jquery'
+    API_URL: JSON.stringify('https://alc7jm51ph.execute-api.us-east-1.amazonaws.com/Prod')
   },
   optimizeDeps: {
     include: ['jquery']

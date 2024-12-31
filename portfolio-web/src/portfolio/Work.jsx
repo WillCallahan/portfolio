@@ -42,7 +42,7 @@ class Work extends React.Component {
 Work.defaultProps = {
     title: null,
     description: null,
-	image: "/public/images/theme/p1.jpg",
+	image: "/images/theme/p1.jpg",
 	popupLink: null,
     imageAlt: null,
     caption: null,

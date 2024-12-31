@@ -103,7 +103,7 @@ class HeadContact extends React.Component {
 HeadContact.defaultProps = {
     email: "callahanwilliam@callahanwilliam.com",
     phone: null,
-    address: "New Fairfield, CT"
+    address: "Bethel, CT"
 };
 
 HeadContact.propTypes = {

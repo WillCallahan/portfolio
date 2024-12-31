@@ -84,11 +84,11 @@ class Contact extends React.Component {
 			<section id="contact" className="section">
 				<div className="container">
 					<div className="row">
-						<div className="col-md-12 headline wow bounceInLeft">
+						<div className="col-md-12 headline" data-aos="fade-up">
 							<h2>{this.props.title}</h2>
 							{this.props.description}
 						</div>
-						<div className="col-md-6 wow bounceInUp">
+						<div className="col-md-6" data-aos="fade-up">
 							{this.props.information}
 							<ul className="icon-list">
 								{this.props.address ? <li><i className="fa fa-fw fa-map-marker"/>{this.props.address}</li> : ""}
@@ -97,7 +97,7 @@ class Contact extends React.Component {
 								{this.props.website ? <li><i className="fa fa-fw fa-globe"/><a href="">{this.props.website}</a></li> : ""}
 							</ul>
 						</div>
-						<div className="col-md-6 wow bounceInRight">
+						<div className="col-md-6" data-aos="slide-left">
 							{this.state.validationMessage}
 							<form id="contact-form" onSubmit={this.onSubmit} role="form" noValidate>
 								<div className="form-group">

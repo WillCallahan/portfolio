@@ -58,7 +58,7 @@ class Navigation extends React.Component {
                             <span className="icon-bar"/>
                             <span className="icon-bar"/>
                         </button>
-                        <a className="navbar-brand" href="#">{this.props.name}</a>
+                        <a className="navbar-brand" href="#intro">{this.props.name}</a>
                     </div>
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -76,9 +76,8 @@ class Navigation extends React.Component {
 Navigation.defaultProps = {
     name: "William Callahan",
     tabs: {
-        "Home": "#intro",
         "Profile": "#profile",
-        "Services": "#services",
+        "Certifications": "#certifications",
         "Resume": "#resume",
         "Contact": "#contact",
     }

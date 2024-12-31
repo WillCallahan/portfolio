@@ -110,7 +110,7 @@ Profile.defaultProps = {
 		"google-plus": null,
 		"dribbble": null
 	},
-	image: "/public/images/theme/photo.jpg",
+	image: "/images/theme/photo.jpg",
 	descriptionTitle: "Professional Profile",
 	description: <p>Motivated and experienced AWS Cloud Engineer. Strong competencies in application development, infrastructure, and large-scale applications.</p>
 };

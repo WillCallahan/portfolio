@@ -28,7 +28,7 @@ class SliderItem extends React.Component {
 
 SliderItem.defaultProps = {
     title: "William Callahan",
-    image: "/public/images/theme/logo/client160-1.png",
+    image: "/images/theme/logo/client160-1.png",
     imageAlt: null,
     imageLink: null,
 };

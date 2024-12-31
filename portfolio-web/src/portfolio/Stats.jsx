@@ -86,8 +86,8 @@ class Stats extends React.Component {
 Stats.defaultProps = {
 	title: "My Stats",
 	statistics: [
-		React.createElement(Stat, {title: "Languages Learned", value: 17, icon: "fa-graduation-cap"}),
-		React.createElement(Stat, {title: "Programs Written", value: 25, icon: "fa-microchip"}),
+		React.createElement(Stat, {title: "Cloud Certs", value: 6, icon: "fa-graduation-cap"}),
+		React.createElement(Stat, {title: "Languages", value: 17, icon: "fa-microchip"}),
 		React.createElement(Stat, {title: "Lines Written", value: 1200000, icon: "fa-file-text-o", postfix: "+"}),
 	]
 };

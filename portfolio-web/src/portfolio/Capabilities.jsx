@@ -51,7 +51,7 @@ Capabilities.defaultProps = {
     description: null,
     capabilities: [
         <Capability title={"Cloud Services"}
-            description={<p>Building Cloud First and Hybrid Cloud Environment Infrastructure</p>}
+            description={<p>Building Public and Hybrid Cloud Environment Infrastructure</p>}
             icon={"fa-cloud"}/>,
         <Capability title={"Full Stack"}
             description={<p>Working as a full-stack developer to maintain all aspects of an application.</p>}

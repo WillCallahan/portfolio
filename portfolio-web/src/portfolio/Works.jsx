@@ -97,12 +97,12 @@ Works.defaultProps = {
     title: "Samples",
     description: null,
     works: [
-        React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/", image: "/public/images/portfolio/VisionsConstructionLLC.jpg"},),
-        React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/", image: "/public/images/portfolio/FairfieldCountyFilms.jpg"}),
-        React.createElement(Work, {title: "Battleship", description: "Battleship Game", image: "/public/images/portfolio/BattleshipCrop.jpg", popupLink: "/public/images/portfolio/Battleship.png"}),
-        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler", image: "/public/images/portfolio/MSLCompiler.jpg"}),
-        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas", image: "/public/images/portfolio/TypingTest.jpg"}),
-        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda", image: "/public/images/portfolio/ContactManagerColor.jpg"}),
+        React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/", image: "/images/portfolio/VisionsConstructionLLC.jpg"},),
+        React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/", image: "/images/portfolio/FairfieldCountyFilms.jpg"}),
+        React.createElement(Work, {title: "Battleship", description: "Battleship Game", image: "/images/portfolio/BattleshipCrop.jpg", popupLink: "/images/portfolio/Battleship.png"}),
+        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler", image: "/images/portfolio/MSLCompiler.jpg"}),
+        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas", image: "/images/portfolio/TypingTest.jpg"}),
+        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda", image: "/images/portfolio/ContactManagerColor.jpg"}),
     ],
 	worksPerRow: 3,
 };

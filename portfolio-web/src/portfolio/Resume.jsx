@@ -16,14 +16,14 @@ class Resume extends React.Component {
             <section id="resume" className="callout" data-aos="fade-up">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 headline wow bounceInDown">
+                        <div className="col-md-12 headline">
                             <h2>{this.props.title}</h2>
                             <p>{this.props.description}</p>
                         </div>
                     </div>
                     {this.getResumeSections()}
                     <div className="row">
-                        <div className="col-md-6 col-md-offset-3 wow bounceInUp">
+                        <div className="col-md-6 col-md-offset-3">
                             <a href={this.props.resumeLink} className="btn btn-default btn-custom-2" download><i className="fa fa-cloud-download icon-before"/> {this.props.resumeLinkText}</a>
                         </div>
                     </div>
@@ -37,38 +37,9 @@ class Resume extends React.Component {
 Resume.defaultProps = {
     title: "Resume",
     description: "My education and experience.",
-    resumeLink: "/public/docs/Resume - William Callahan[2017-11-21].docx",
+    resumeLink: "/docs/Resume - William Callahan[2017-11-21].docx",
     resumeLinkText: "Download CV",
     resumeSections: [
-        React.createElement(ResumeSection, {
-            title: "Education", resumeItems: [
-                React.createElement(ResumeItem, {
-                    title: "MS in Data Science (In Progress)",
-                    description: (
-                        <ul>
-							<li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
-							<li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
-                        </ul>
-                    ),
-                    company: "Stevens Institute of Technology",
-                    date: "2023 - Current",
-					icon: "fa-area-chart",
-                    offset: false
-                }),
-                React.createElement(ResumeItem, {
-                    title: "BS in Computer science, Minor in Security",
-                    description: (
-                        <ul>
-							<li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
-							<li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
-                        </ul>
-                    ),
-                    company: "WCSU",
-                    date: "2012 - 2017",
-					icon: "fa-graduation-cap"
-                }),
-            ]
-        }),
         React.createElement(ResumeSection, {
             title: "Experience", resumeItems: [
                 React.createElement(ResumeItem, {
@@ -134,7 +105,36 @@ Resume.defaultProps = {
                     date: "2014 - 2017"
                 }),
             ]
-        })
+        }),
+        React.createElement(ResumeSection, {
+            title: "Education", resumeItems: [
+                React.createElement(ResumeItem, {
+                    title: "MS in Data Science (In Progress)",
+                    description: (
+                        <ul>
+                            <li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
+                            <li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
+                        </ul>
+                    ),
+                    company: "Stevens Institute of Technology",
+                    date: "2023 - Current",
+                    icon: "fa-area-chart",
+                    offset: false
+                }),
+                React.createElement(ResumeItem, {
+                    title: "BS in Computer science, Minor in Security",
+                    description: (
+                        <ul>
+                            <li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
+                            <li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
+                        </ul>
+                    ),
+                    company: "WCSU",
+                    date: "2012 - 2017",
+                    icon: "fa-graduation-cap"
+                }),
+            ]
+        }),
     ]
 };
 

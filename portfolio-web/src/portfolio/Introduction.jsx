@@ -55,7 +55,7 @@ Introduction.defaultProps = {
         "HTML/CSS/JavaScript Developer",
     ],
 	images: [
-		"public/images/theme/backstretch/Screens.jpg",
+		"/images/theme/backstretch/Screens.jpg",
 	],
     link: "#profile"
 };

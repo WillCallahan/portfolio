@@ -29,11 +29,11 @@
 
 		//TODO This does not work (it should slide the user to the top of the page when the title is clicked)
 		$('a[href*="#"]').bind("click", function (e) {
-			var anchor = $(this);
+			e.preventDefault();
+			const anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $(anchor.attr('href')).offset().top
 			}, 1000);
-			e.preventDefault();
 		});
 
 	});

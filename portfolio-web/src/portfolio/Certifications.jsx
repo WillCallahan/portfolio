@@ -5,7 +5,7 @@ class Certifications extends React.Component {
 
     render() {
         return (
-            <section className="callout">
+            <section className="callout" id={this.props.certificationsLink}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3">
@@ -53,7 +53,7 @@ class Certifications extends React.Component {
 
 Certifications.defaultProps = {
     title: "Certifications",
-    certificationsLink: "#certifications"
+    certificationsLink: "certifications"
 };
 
 Certifications.propTypes = {
