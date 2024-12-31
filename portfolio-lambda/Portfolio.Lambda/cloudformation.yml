@@ -61,7 +61,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       # FunctionName: !Sub ${AWS::StackName}-lambda
-      Runtime: dotnetcore2.1
+      Runtime: dotnet8
       Handler: Portfolio.Lambda::Portfolio.Lambda.LambdaEntryPoint::SendEmail
       CodeUri:
         Bucket: !Ref CoseS3Bucket
