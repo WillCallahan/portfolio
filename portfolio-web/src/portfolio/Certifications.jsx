@@ -39,7 +39,12 @@ class Certifications extends React.Component {
                             </div>
                             <div className="col-sm-3" data-aos="slide-up">
                                 <a href='https://www.credly.com/badges/2eb79287-b053-4556-b47b-fe10d46a631a/public_url'>
-                                    <img src='https://images.credly.com/size/340x340/images/44994cda-b5b0-44cb-9a6d-d29b57163073/image.png' alt='AWS Cloud Practitioner'/>
+                                    <img src='https://images.credly.com/size/340x340/images/44994cda-b5b0-44cb-9a6d-d29b57163073/image.png' alt='GCP - Cloud Digital Leader'/>
+                                </a>
+                            </div>
+                            <div className="col-sm-3" data-aos="slide-up">
+                                <a href='https://learn.microsoft.com/en-us/users/wcallahan/credentials/67fc5f1a02cfcf98'>
+                                    <img src='https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg' alt='Azure Fundamentals'/>
                                 </a>
                             </div>
                         </div>

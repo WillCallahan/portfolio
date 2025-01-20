@@ -841,7 +841,7 @@ h3 > .fa {
 	right: 0;
 	top: 0;
 	z-index: 9999;
-
+	animation: loading 2.5s forwards;
 }
 
 #status, .status-mes {
@@ -854,6 +854,7 @@ h3 > .fa {
 	position: absolute;
 	top: 50%;
 	width: 200px;
+	animation: loading 2.5s forwards;
 }
 
 .status-mes {
@@ -869,6 +870,21 @@ h3 > .fa {
 	color: #222;
 	margin-top: 30px;
 
+}
+
+@keyframes loading {
+	0% {
+		opacity: 1;
+		visibility: visible;
+	}
+	20% {
+		opacity: 1;
+		visibility: visible;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 
 /* ---------------------------------------------- /*

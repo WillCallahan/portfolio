@@ -111,10 +111,7 @@ Resume.defaultProps = {
                 React.createElement(ResumeItem, {
                     title: "MS in Data Science (In Progress)",
                     description: (
-                        <ul>
-                            <li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
-                            <li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
-                        </ul>
+                        <></>
                     ),
                     company: "Stevens Institute of Technology",
                     date: "2023 - Current",
@@ -125,8 +122,8 @@ Resume.defaultProps = {
                     title: "BS in Computer science, Minor in Security",
                     description: (
                         <ul>
-                            <li>Excelled in courses by holding a 3.31 GPA overall and 3.51 GPA in major.</li>
-                            <li>Maintained a fulltime course load while working a minimum of 20 hours each week.</li>
+                            <li>Focused on security to build a strong knowledge-base required for modern applications.</li>
+                            <li>Maintained a full-time course load while working a minimum of 20 hours each week.</li>
                         </ul>
                     ),
                     company: "WCSU",
