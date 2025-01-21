@@ -15,7 +15,7 @@ class Work extends React.Component {
             case "image":
                 return "pop-up";
             case "iframe":
-                return "iframe-pop-up";
+                return "pop-up-iframe";
             default:
                 throw new Error("Popup type " +  this.props.type + " does not exist!");
         }
@@ -23,7 +23,7 @@ class Work extends React.Component {
 
     render() {
         return (
-            <a href={this.props.popupLink || this.props.image} className={this.getType()} title={this.props.caption}>
+            <a href={this.props.popupLink || this.props.image} className={this.getType()} title={this.props.caption} target="_blank">
                 <div className="portfolio-item">
                     <div className="portfolio-item-preview">
                         <img src={this.props.image} alt={this.props.imageAlt}/>

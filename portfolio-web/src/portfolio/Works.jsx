@@ -37,44 +37,6 @@ class Works extends React.Component {
         }, this);
     }
 
-    componentDidMount() {
-		$('#portfolio').magnificPopup({
-			delegate: 'a.pop-up',
-			type: 'image',
-			gallery: {
-				enabled: true,
-				navigateByImgClick: true,
-				preload: [0, 1]
-			},
-			image: {
-				titleSrc: 'title',
-				tError: 'The image could not be loaded.',
-			}
-		});
-
-		$('.iframe-pop-up').magnificPopup({
-			key: 'pop-up-iframe',
-			type: 'iframe',
-			preloader: true,
-			tLoading: '',
-			iframe: {
-				markup: '<div class="mfp-iframe-scaler pop-up-iframe"><div class="mfp-close"></div><iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe></div>',
-			},
-			gallery: {
-				enabled: true
-			},
-			callbacks: {
-				open: function(arg) {
-					let _this = this;
-					this.updateStatus('loading', '');
-					$(this.content).find("iframe.mfp-iframe").load(function() {
-						_this.updateStatus('ready', '');
-					});
-				}
-			}
-		});
-    }
-
     render() {
         return (
             <section id="portfolio" className="callout">
@@ -97,12 +59,12 @@ Works.defaultProps = {
     title: "Samples",
     description: null,
     works: [
-        React.createElement(Work, {title: "Visions Construction LLC", description: "Content Management System", type: "iframe", popupLink: "https://visionsconstructionllc.com/", image: "/images/portfolio/VisionsConstructionLLC.jpg"},),
+        React.createElement(Work, {title: "Color-blind Pal", description: "Colorblindness Accessibility App", type: "iframe", popupLink: "https://github.com/tecconn/colorblind-pal", image: "/images/portfolio/Ishihara-Protanopia.jpg"},),
+        React.createElement(Work, {title: "Battleship", description: "Battleship Game", image: "/images/portfolio/BattleshipCrop.jpg", popupLink: "https://github.com/WillCallahan/wcsu-cs-360-01"}),
+        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler", image: "/images/portfolio/MSLCompiler.jpg", popupLink: "https://github.com/WillCallahan/wcsu-cs-299-01"}),
+        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas", image: "/images/portfolio/TypingTest.jpg", popupLink: "https://github.com/tecconn/TypingTest"}),
+        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda", image: "/images/portfolio/ContactManagerColor.jpg", popupLink: "https://github.com/WillCallahan/contact-manager"}),
         React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/", image: "/images/portfolio/FairfieldCountyFilms.jpg"}),
-        React.createElement(Work, {title: "Battleship", description: "Battleship Game", image: "/images/portfolio/BattleshipCrop.jpg", popupLink: "/images/portfolio/Battleship.png"}),
-        React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler", image: "/images/portfolio/MSLCompiler.jpg"}),
-        React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas", image: "/images/portfolio/TypingTest.jpg"}),
-        React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda", image: "/images/portfolio/ContactManagerColor.jpg"}),
     ],
 	worksPerRow: 3,
 };
