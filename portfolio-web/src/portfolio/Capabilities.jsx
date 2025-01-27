@@ -51,7 +51,7 @@ Capabilities.defaultProps = {
     description: null,
     capabilities: [
         <Capability title={"Cloud Services"}
-            description={<p>Building Public and Hybrid Cloud Environment Infrastructure</p>}
+            description={<p>Building Public, Mutli, and Hybrid Cloud Environment Infrastructure</p>}
             icon={"fa-cloud"}/>,
         <Capability title={"Full Stack"}
             description={<p>Working as a full-stack developer to maintain all aspects of an application.</p>}
@@ -66,7 +66,7 @@ Capabilities.defaultProps = {
             description={<p>Creating web applications that are both mobile and user friendly.</p>}
             icon={"fa-desktop"}/>,
         <Capability title={"Server Configuration"}
-            description={<p>Configuring AWS, Windows, and Linux Servers for hosting applications.</p>}
+            description={<p>Configuring Kubernetes, Windows, Linux Environments.</p>}
             icon={"fa-cogs"}/>,
     ],
     itemsPerRow: 3

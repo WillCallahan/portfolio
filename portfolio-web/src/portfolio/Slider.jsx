@@ -62,7 +62,7 @@ Slider.defaultProps = {
 		React.createElement(SliderItem, {title: "ES6", image: "/images/technology/ES6.png"}),
 		React.createElement(SliderItem, {title: "Oracle", image: "/images/technology/Oracle.jpg"}),
 		React.createElement(SliderItem, {title: "MySql", image: "/images/technology/MySql.png"}),
-		React.createElement(SliderItem, {title: "DynamoDB", image: "/images/technology/DynamoDB.png"}),
+		React.createElement(SliderItem, {title: "OpenSearch", image: "/images/technology/OpenSearch.png"}),
 	]
 };
 

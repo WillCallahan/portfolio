@@ -46,8 +46,9 @@ Resume.defaultProps = {
                     title: "Cloud Engineer",
                     description: (
                         <ul>
-							<li>Develop and maintain AWS and Azure cloud infrastructure</li>
-                            <li>Solution large scale elastic application environments</li>
+							<li>Collaborated with stakeholders to design and implement multi-cloud solutions for high elasticity and durability.</li>
+                            <li>Specialized in big data pipeline processing and analysis for businesses in health, government, and media sectors.</li>
+                            <li>Focus in systems performance improvements in support of high throughput applications.</li>
                         </ul>
                     ),
                     company: "ThorTech Solutions",
@@ -58,52 +59,37 @@ Resume.defaultProps = {
                     title: "Squad Leader",
                     description: (
                         <ul>
-							<li>Responsible for the development and welfare of a squad of eight soldiers.</li>
-                            <li>Received ARCOM award for outstanding efforts during overseas deployment.</li>
+							<li>Led an eight-soldier squad, providing training, direction, and development for successful overseas deployment in support of Operation Enduring Freedom (OEF).</li>
+                            <li>Managed squad operations, ensuring readiness and effectiveness in combat situations.</li>
+                            <li>Oversaw the execution of missions and maintained high morale and discipline within the squad.</li>
                         </ul>
                     ),
                     company: "US Army National Guard",
                     date: "2013 - 2022"
                 }),
                 React.createElement(ResumeItem, {
-                    title: "Backend Developer",
+                    title: "Software Engineer",
                     description: (
                         <ul>
-							<li>Responsible for full application development lifecycle; meeting with major stakeholders, defining architecture and documentation, and implementing the architecture of the application.</li>
-							<li>Engineered a breakthrough dynamic form management software built to scale for the future.</li>
-							<li>Performed exceptionally well in reaction to late stage design changes under stringent time requirements.</li>
-							<li>Interfaced with international organizations to provide REST API access and documentation.</li>
-							<li>Utilized technologies including AWS EC2, AWS RDS, AWS API Gateway, Python, C#, Django, ASP.NET, SQL, PL/SQL, HTML, CSS, and MySQL DBMS.</li>
+							<li>Collaborated with stakeholders to gather application requirements for a dynamic forms application.</li>
+							<li>Designed and implemented architecture to support global efforts in tracking illicit firearms trade.</li>
                         </ul>
                     ),
                     company: "United Nations",
                     date: "2014 - 2017"
                 }),
                 React.createElement(ResumeItem, {
-                    title: "Lead Team Software Developer",
+                    title: "Software Engineer Team Lead",
                     description: (
                         <ul>
-                            <li>Responsible for full application development lifecycle among a team of three developers.</li>
-                            <li>Launched first student oriented software development team for the university.</li>
-                            <li>Defined clear development standards which promoted development understandability and efficiency.</li>
-                            <li>Streamlined university operations with three robust web applications utilized by the university today.</li>
-                            <li>Utilized technologies including MVC Design Patterns, RESTful Web Services, Java SE, Java EE, Spring, AngularJS, JQuery, JavaScript, HTML, CSS, SQL, and Oracle DBMS.</li>
+                            <li>Led first student software development team at WCSU, utilizing Java EE, Spring, AngularJS, and Oracle Database Systems.</li>
+                            <li>Implemented Agile methodology to streamline project development and ensure timely delivery.</li>
+                            <li>Mentored and supported fellow engineers to enhance technical skills and project efficiency.</li>
                         </ul>
                     ),
                     company: "WCSU",
                     date: "2014 - 2017"
-                }),
-                React.createElement(ResumeItem, {
-                    title: "Computer Science Tutor",
-                    description: (
-                        <ul>
-							<li>Provided outstanding support to fellow students to foster growth in the field of Computer Science.</li>
-							<li>Maintained a high level of awareness in both technological and behavioral skills.</li>
-                        </ul>
-                    ),
-                    company: "WCSU",
-                    date: "2014 - 2017"
-                }),
+                })
             ]
         }),
         React.createElement(ResumeSection, {
@@ -111,7 +97,9 @@ Resume.defaultProps = {
                 React.createElement(ResumeItem, {
                     title: "MS in Data Science (In Progress)",
                     description: (
-                        <></>
+                        <ul>
+                            <li>Currently working on obtaining a Masters of Science in Data Science.</li>
+                        </ul>
                     ),
                     company: "Stevens Institute of Technology",
                     date: "2023 - Current",

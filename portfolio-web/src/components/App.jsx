@@ -77,7 +77,7 @@ App.defaultProps = {
 		github: "https://github.com/WillCallahan",
 		linkedin: "https://www.linkedin.com/in/william-callahan-32ba31109/"
 	},
-	profileImage: "/images/theme/Profile2.jpg"
+	profileImage: "/images/theme/Profile3.png"
 };
 
 App.propTypes = {

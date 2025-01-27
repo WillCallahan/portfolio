@@ -59,10 +59,11 @@ class Stats extends React.Component {
 				$(this).delay(6000).countTo({
 					from: 0,
 					to: counter,
-					speed: 3000,// Stats Counter Speed
-					refreshInterval: 50,
+					speed: 800,
+					refreshInterval: 30,
 				});
 			});
+			this.destroy();
 		}, {offset: '70%', triggerOnce: true});
 	}
 
