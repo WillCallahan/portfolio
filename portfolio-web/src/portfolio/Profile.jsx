@@ -112,7 +112,10 @@ Profile.defaultProps = {
 	},
 	image: "/images/theme/photo.jpg",
 	descriptionTitle: "Professional Profile",
-	description: <p>Motivated and experienced AWS Cloud Engineer. Strong competencies in application development, infrastructure, and large-scale applications.</p>
+	description: <p>Cloud Software Engineer with eight years of experience designing and
+		implementing scalable, high-performance multi-cloud architectures. Proven
+		ability to lead cross-functional teams to deliver mission-critical solutions of
+		complex applications while improving security and reducing costs</p>
 };
 
 Profile.propTypes = {

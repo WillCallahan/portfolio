@@ -43,12 +43,19 @@ Resume.defaultProps = {
         React.createElement(ResumeSection, {
             title: "Experience", resumeItems: [
                 React.createElement(ResumeItem, {
-                    title: "Cloud Engineer",
+                    title: "Senior Cloud Software Engineer",
                     description: (
                         <ul>
-							<li>Collaborated with stakeholders to design and implement multi-cloud solutions for high elasticity and durability.</li>
-                            <li>Specialized in big data pipeline processing and analysis for businesses in health, government, and media sectors.</li>
-                            <li>Focus in systems performance improvements in support of high throughput applications.</li>
+							<li>Implemented multi-cloud solutions ensuring security, durability, and
+                                scalability to health, government, and media clients</li>
+							<li>Spearheaded initiative to accelerate and improve survey weighting model
+                                accuracy for 2024 US Presidential Election live forecasting</li>
+                            <li>Championed a team that reduced operational costs by 15% on average
+                                across multiple clients</li>
+                            <li>Optimized high-throughput applications, improving efficiency and
+                                reliability by 90%</li>
+                            <li>Architected distributed systems leveraging AWS Lambda, ElastiCache, RDS,
+                                MSK, ECS, Beanstalk, Kinesis, ELB, SQS, Athena, EC2, SSM, and VPCs</li>
                         </ul>
                     ),
                     company: "ThorTech Solutions",
@@ -59,9 +66,8 @@ Resume.defaultProps = {
                     title: "Squad Leader",
                     description: (
                         <ul>
-							<li>Led an eight-soldier squad, providing training, direction, and development for successful overseas deployment in support of Operation Enduring Freedom (OEF).</li>
-                            <li>Managed squad operations, ensuring readiness and effectiveness in combat situations.</li>
-                            <li>Oversaw the execution of missions and maintained high morale and discipline within the squad.</li>
+							<li> Led an eight-soldier squad, providing training, direction, and development for successful overseas deployment in support of Operation Enduring Freedom (OEF)</li>
+                            <li>Oversaw the execution of missions and maintained high morale and discipline within the squad</li>
                         </ul>
                     ),
                     company: "US Army National Guard",
@@ -71,8 +77,8 @@ Resume.defaultProps = {
                     title: "Software Engineer",
                     description: (
                         <ul>
-							<li>Collaborated with stakeholders to gather application requirements for a dynamic forms application.</li>
-							<li>Designed and implemented architecture to support global efforts in tracking illicit firearms trade.</li>
+							<li>Collaborated with stakeholders to dene requirements for a dynamic forms application, leveraging Django, React, and MySQL</li>
+							<li>Designed and implemented a scalable architecture to support global efforts in tracking illicit rearms trade</li>
                         </ul>
                     ),
                     company: "United Nations",
@@ -82,9 +88,8 @@ Resume.defaultProps = {
                     title: "Software Engineer Team Lead",
                     description: (
                         <ul>
-                            <li>Led first student software development team at WCSU, utilizing Java EE, Spring, AngularJS, and Oracle Database Systems.</li>
-                            <li>Implemented Agile methodology to streamline project development and ensure timely delivery.</li>
-                            <li>Mentored and supported fellow engineers to enhance technical skills and project efficiency.</li>
+                            <li>Chaired the rst student-led software development team at WCSU</li>
+                            <li>Mentored fellow engineers in Java, Spring, Oracle, MSAD, and JBoss to build a university operations management website</li>
                         </ul>
                     ),
                     company: "WCSU",

@@ -59,12 +59,12 @@ Works.defaultProps = {
     title: "Samples",
     description: null,
     works: [
-        React.createElement(Work, {title: "Color-blind Pal", description: "Colorblindness Accessibility App", type: "iframe", popupLink: "https://github.com/tecconn/colorblind-pal", image: "/images/portfolio/Ishihara-Protanopia.jpg"},),
+        React.createElement(Work, {title: "Disney Scrapper", description: "Price Change Identifier", type: "iframe", popupLink: "https://github.com/WillCallahan/disney-scrapper", image: "/images/portfolio/DisneyScrapper.png"}),
+        React.createElement(Work, {title: "Color-blind Pal", description: "Colorblindness Accessibility App", type: "iframe", popupLink: "https://github.com/tecconn/colorblind-pal", image: "/images/portfolio/Ishihara-Protanopia.jpg"}),
         React.createElement(Work, {title: "Battleship", description: "Battleship Game", image: "/images/portfolio/BattleshipCrop.jpg", popupLink: "https://github.com/WillCallahan/wcsu-cs-360-01"}),
         React.createElement(Work, {title: "MSL Compiler", description: "Custom Language Compiler", image: "/images/portfolio/MSLCompiler.jpg", popupLink: "https://github.com/WillCallahan/wcsu-cs-299-01"}),
         React.createElement(Work, {title: "Typing Test", description: "Demonstration of HTML5 Canvas", image: "/images/portfolio/TypingTest.jpg", popupLink: "https://github.com/tecconn/TypingTest"}),
         React.createElement(Work, {title: "Contact Manager", description: "Demonstration of AWS Lambda", image: "/images/portfolio/ContactManagerColor.jpg", popupLink: "https://github.com/WillCallahan/contact-manager"}),
-        React.createElement(Work, {title: "Fairfield Country Films", description: "Marketing Website", type: "iframe", popupLink: "http://www.fairfieldcountyfilms.com/", image: "/images/portfolio/FairfieldCountyFilms.jpg"}),
     ],
 	worksPerRow: 3,
 };

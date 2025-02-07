@@ -45,11 +45,11 @@ class App extends React.Component {
 
 				<Profile name={this.props.name} socialProfiles={this.props.socialProfiles} image={this.props.profileImage}/>
 
-				<Stats/>
+				<Certifications/>
 
 				<Capabilities/>
 
-				<Certifications/>
+				<Stats/>
 
 				<Status descriptionTitle={"Currently Unavailable"} description={<p>I am not currently looking for freelance work or new positions.</p>}/>
 
