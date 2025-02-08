@@ -37,7 +37,7 @@ class Resume extends React.Component {
 Resume.defaultProps = {
     title: "Resume",
     description: "My education and experience.",
-    resumeLink: "/docs/Resume - William Callahan[2017-11-21].docx",
+    resumeLink: "/docs/CV_WilliamCallahan_08FEB2025.pdf",
     resumeLinkText: "Download CV",
     resumeSections: [
         React.createElement(ResumeSection, {
@@ -46,16 +46,21 @@ Resume.defaultProps = {
                     title: "Senior Cloud Software Engineer",
                     description: (
                         <ul>
-							<li>Implemented multi-cloud solutions ensuring security, durability, and
-                                scalability to health, government, and media clients</li>
-							<li>Spearheaded initiative to accelerate and improve survey weighting model
-                                accuracy for 2024 US Presidential Election live forecasting</li>
-                            <li>Championed a team that reduced operational costs by 15% on average
-                                across multiple clients</li>
-                            <li>Optimized high-throughput applications, improving efficiency and
-                                reliability by 90%</li>
-                            <li>Architected distributed systems leveraging AWS Lambda, ElastiCache, RDS,
-                                MSK, ECS, Beanstalk, Kinesis, ELB, SQS, Athena, EC2, SSM, and VPCs</li>
+							<li>Led cross-functional clients in health, government, and media sectors on
+                                designing and implementing multi-cloud solutions, ensuring security,
+                                durability, and scalability</li>
+							<li>Reduced batch execution times by 90%, accelerating time to market from
+                                hours to minutes for multiple clients</li>
+                            <li>Optimized live election API performance, ensuring consistent sub-200ms
+                                latency while querying large dynamic datasets</li>
+                            <li>Redesigned US election survey platform, improving model accuracy and
+                                accelerating live election publishing</li>
+                            <li>Reimagined company CI/CD pipeline and build processes to reduce build
+                                times by 60%
+                                Architected dist</li>
+                            <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK,
+                                ECS, Beanstalk, Kinesis, ELB, SQS, EC2, SSM, and VPCs</li>
+                            <li>Reduced cloud Operational costs per client by 15% on average</li>
                         </ul>
                     ),
                     company: "ThorTech Solutions",
