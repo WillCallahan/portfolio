@@ -1,15 +1,8 @@
 import PropTypes from "prop-types";
-import React from "react";
 
-class Work extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-    getType() {
-        switch(this.props.type) {
+const Work = (props) => {
+    const getType = () => {
+        switch (props.type) {
             case "video":
                 return "video-pop-up";
             case "image":
@@ -17,33 +10,30 @@ class Work extends React.Component {
             case "iframe":
                 return "pop-up-iframe";
             default:
-                throw new Error("Popup type " +  this.props.type + " does not exist!");
+                throw new Error("Popup type " + props.type + " does not exist!");
         }
     }
 
-    render() {
-        return (
-            <a href={this.props.popupLink || this.props.image} className={this.getType()} title={this.props.caption} target="_blank">
-                <div className="portfolio-item">
-                    <div className="portfolio-item-preview">
-                        <img src={this.props.image} alt={this.props.imageAlt}/>
-                    </div>
-                    <div className="portfolio-item-description">
-                        <h3>{this.props.title}</h3>
-                        <p>{this.props.description}</p>
-                    </div>
+    return (
+        <a href={props.popupLink || props.image} className={getType()} title={props.caption} target="_blank">
+            <div className="portfolio-item">
+                <div className="portfolio-item-preview">
+                    <img src={props.image} alt={props.imageAlt}/>
                 </div>
-            </a>
-        );
-    }
-
+                <div className="portfolio-item-description">
+                    <h3>{props.title}</h3>
+                    <p>{props.description}</p>
+                </div>
+            </div>
+        </a>
+    );
 }
 
 Work.defaultProps = {
     title: null,
     description: null,
-	image: "/images/theme/p1.jpg",
-	popupLink: null,
+    image: "/images/theme/p1.jpg",
+    popupLink: null,
     imageAlt: null,
     caption: null,
     type: "image"
@@ -52,14 +42,14 @@ Work.defaultProps = {
 Work.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-	image: PropTypes.string,
-	popupLink: PropTypes.string,
+    image: PropTypes.string,
+    popupLink: PropTypes.string,
     imageAlt: PropTypes.string,
     caption: PropTypes.string,
-	/**
+    /**
      * Type of popup to show (image, video, iframe)
-	 */
-	type: PropTypes.string,
+     */
+    type: PropTypes.string,
 };
 
 export default Work;

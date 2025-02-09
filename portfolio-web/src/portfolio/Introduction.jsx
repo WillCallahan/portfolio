@@ -1,70 +1,47 @@
 import PropTypes from "prop-types";
-import React from "react";
+import {useEffect, useRef, useState} from "react";
 import $ from "jquery";
 
-class Introduction extends React.Component {
+const Introduction = ({ name, images, link }) => {
+    const introRef = useRef(null);
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+    useEffect(() => {
+        $(introRef.current).backstretch(images, { duration: 3000, fade: 750 });
+    }, [images]);
 
-    componentDidMount() {
-		$('#intro').backstretch(this.props.images, {duration: 3000, fade: 750});
-		$(".rotate").textrotator({
-			animation: "dissolve",
-			separator: "|",
-			speed: 3000
-		});
-	}
-
-    render() {
-        return (
-            <section id="intro" className="section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="hello" data-aos="fade-up">
-                                <h1>Hi, I'm {this.props.name}</h1>
-                                <h3>
-                                    <span className="rotate">{this.props.skills.join(" | ")}</span>
-                                </h3>
-                            </div>
-                            <a href={this.props.link}>
-                                <div className="mouse-icon">
-                                    <div className="wheel"/>
-                                </div>
-                            </a>
+    return (
+        <section ref={introRef} id="intro" className="section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="hello" data-aos="fade-up">
+                            <h1>Hi, I&#39;m {name}</h1>
+                            <h3>
+                                <span>Senior Cloud Engineer</span>
+                            </h3>
                         </div>
+                        <a href={link}>
+                            <div className="mouse-icon">
+                                <div className="wheel" />
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </section>
-        );
-    }
-
-}
+            </div>
+        </section>
+    );
+};
 
 Introduction.defaultProps = {
     name: "William Callahan",
-    skills: [
-        "C# Engineer",
-        "AWS Certified",
-        "Python Engineer",
-        "Java Engineer",
-        "PHP Engineer",
-        "HTML/CSS/JavaScript Developer",
-    ],
-	images: [
-		"/images/theme/backstretch/Screens.jpg",
-	],
-    link: "#profile"
+    images: ["/images/theme/backstretch/Screens.jpg"],
+    link: "#profile",
 };
 
 Introduction.propTypes = {
     name: PropTypes.string,
-    skills: PropTypes.array,
-	images: PropTypes.array,
-    link: PropTypes.string
+    images: PropTypes.arrayOf(PropTypes.string),
+    link: PropTypes.string,
 };
 
 export default Introduction;

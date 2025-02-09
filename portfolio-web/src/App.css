@@ -20,3 +20,18 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+/* Fade Text */
+.fade-text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-text.hidden {
+  opacity: 0;
+}
+
+.fade-text.visible {
+  opacity: 1;
+}

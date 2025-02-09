@@ -1,27 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-class Footer extends React.Component {
-
-	render() {
-		return (
-			<footer id="footer">
-				<div className="container">
-					<div className="row">
-						<div className="col-md-8">
-							<p className="copy">
-								{this.props.description}
-							</p>
-						</div>
-						<div className="col-md-4 text-right">
-							{this.props.github ? <a href={this.props.github} target="_blank"><i className="fa fa-github"/></a> : ""}
-						</div>
+const Footer = (props) => {
+	return (
+		<footer id="footer">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-8">
+						<p className="copy">
+							{props.description}
+						</p>
+					</div>
+					<div className="col-md-4 text-right">
+						{props.github ? <a href={props.github} target="_blank"><i className="fa fa-github"/></a> : ""}
 					</div>
 				</div>
-			</footer>
-		);
-	}
-
+			</div>
+		</footer>
+	);
 }
 
 Footer.defaultProps = {

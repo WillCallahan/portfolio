@@ -1,109 +1,64 @@
-import React from "react";
 import PropTypes from "prop-types";
+import {flow, intersection, filter, size, toPairs, map, nth} from "lodash/fp";
 
-class HeadContact extends React.Component {
+const contactProperties = ["email", "phone", "address"];
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            width: 4
-        };
-    }
+const getWidth = (props) => {
+    const propsCount = flow(
+        toPairs,
+        filter(v => !!v[1]),
+        map(nth(0)),
+        intersection(contactProperties),
+        size
+    )(props);
+    return 12 / (propsCount > 0 ? propsCount : 1);
+};
 
-    componentDidMount() {
-        this.setState({width: this.getWidth()});
-    }
+const HeadContact = ({ email, phone, address }) => {
+    const width = getWidth({ email, phone, address });
 
-    static getContactProperties() {
-        return ["email", "phone", "address"];
-    }
-
-    getEmail() {
-        if (this.props.email) {
-            return (
-                <div className={"col-sm-" + this.state.width + " wow bounceInLeft"}>
-                    <div className="profile-item">
-                        <i className="fa fa-envelope-o"/>
-                        <h5><a href={"mailto:" + this.props.email}>{this.props.email}</a></h5>
-                    </div>
+    return (
+        <section id="profile-contact">
+            <div className="container">
+                <div className="row">
+                    {email && (
+                        <div className={`col-sm-${width} wow bounceInLeft`}>
+                            <div className="profile-item">
+                                <i className="fa fa-envelope-o" />
+                                <h5>
+                                    <a href={`mailto:${email}`}>{email}</a>
+                                </h5>
+                            </div>
+                        </div>
+                    )}
+                    {phone && (
+                        <div className={`col-sm-${width} wow bounceInUp`}>
+                            <div className="profile-item">
+                                <i className="fa fa-phone" />
+                                <h5>
+                                    <a href={`tel:${phone}`}>{phone}</a>
+                                </h5>
+                            </div>
+                        </div>
+                    )}
+                    {address && (
+                        <div className={`col-sm-${width} wow bounceInRight`}>
+                            <div className="profile-item">
+                                <i className="fa fa-map-marker" />
+                                <h5>{address}</h5>
+                            </div>
+                        </div>
+                    )}
                 </div>
-            );
-        }
-    }
-
-    getPhone() {
-        if (this.props.phone) {
-            return (
-                <div className={"col-sm-" + this.state.width + " wow bounceInUp"}>
-                    <div className="profile-item">
-                        <i className="fa fa-phone"/>
-                        <h5><a href={"phone:" + this.props.phone}>{this.props.phone}</a></h5>
-                    </div>
-                </div>
-            );
-        }
-    }
-
-    getAddress() {
-        if (this.props.address) {
-            return (
-                <div className={"col-sm-" + this.state.width + " wow bounceInRight"}>
-                    <div className="profile-item">
-                        <i className="fa fa-map-marker"/>
-                        <h5>{this.props.address}</h5>
-                    </div>
-                </div>
-            );
-        }
-    }
-
-    /**
-     * Gets all the Contact properties that have been filled
-     *
-     * @return {Array} Values of the contact properties that have been filled
-     */
-    getFilledContactValues() {
-        let contactProps = HeadContact.getContactProperties();
-        let values = [];
-        for (let prop in this.props) {
-            if (this.props.hasOwnProperty(prop) && contactProps.includes(prop) && this.props[prop])
-                values.push(prop);
-        }
-        return values;
-    }
-
-    /**
-     * Gets the Bootstrap Width that each contact card should be.
-     *
-     * This is based on the Bootstrap grid layout system.
-     *
-     * @return {number} Bootstrap 12 column width
-     */
-    getWidth() {
-        let filledValues = this.getFilledContactValues().length;
-        return 12 / (filledValues > 0 ? filledValues : 1);
-    }
-
-    render() {
-        return (
-            <section id="profile-contact">
-                <div className="container">
-                    <div className="row">
-                        {this.getEmail()}
-                        {this.getPhone()}
-                        {this.getAddress()}
-                    </div>
-                </div>
-            </section>
-        );
-    }
-
-}
+            </div>
+        </section>
+    );
+};
 
 HeadContact.defaultProps = {
     email: "callahanwilliam@callahanwilliam.com",
     phone: null,
-    address: "Bethel, CT"
+    address: "Bethel, CT",
 };
 
 HeadContact.propTypes = {

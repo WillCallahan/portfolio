@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 import Navigation from "../portfolio/Navigation";
@@ -7,7 +6,7 @@ import HeadContact from "../portfolio/HeadContact";
 import Profile from "../portfolio/Profile";
 import Stats from "../portfolio/Stats";
 import Capabilities from "../portfolio/Capabilities";
-import Status from "../portfolio/Status";
+// import Status from "../portfolio/Status";
 import Resume from "../portfolio/Resume";
 import Works from "../portfolio/Works";
 import Contact from "../portfolio/Contact";
@@ -16,58 +15,42 @@ import Loader from "../portfolio/Loader";
 import Slider from "../portfolio/Slider";
 import Certifications from "../portfolio/Certifications";
 
-class App extends React.Component {
+const App = ({ name, repository, socialProfiles, profileImage }) => {
+	return (
+		<div className="wrapper">
+			<Loader title="William Callahan" />
 
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+			<Navigation name={name} />
 
-	componentDidMount() {
+			<Introduction name={name} />
 
-	}
+			<HeadContact />
 
-	componentWillUnmount() {
+			<Profile name={name} socialProfiles={socialProfiles} image={profileImage} />
 
-	}
+			<Certifications />
 
-	render() {
-		return (
-			<div className="wrapper">
+			<Capabilities />
 
-				<Loader title="William Callahan"/>
+			<Stats />
 
-				<Navigation name={this.props.name}/>
+			{/*<Status*/}
+			{/*	descriptionTitle="Currently Unavailable"*/}
+			{/*	description={<p>I am not currently looking for freelance work or new positions.</p>}*/}
+			{/*/>*/}
 
-				<Introduction name={this.props.name}/>
+			<Resume />
 
-				<HeadContact/>
+			<Slider />
 
-				<Profile name={this.props.name} socialProfiles={this.props.socialProfiles} image={this.props.profileImage}/>
+			<Works />
 
-				<Certifications/>
+			<Contact />
 
-				<Capabilities/>
-
-				<Stats/>
-
-				<Status descriptionTitle={"Currently Unavailable"} description={<p>I am not currently looking for freelance work or new positions.</p>}/>
-
-				<Resume/>
-
-				<Slider/>
-
-				<Works/>
-
-				<Contact/>
-
-				<Footer description={<span>&copy; 2025 {this.props.name}, All Rights Reserved.</span>} github={this.props.repository}/>
-
-			</div>
-		);
-	}
-
-}
+			<Footer description={<span>&copy; 2025 {name}, All Rights Reserved.</span>} github={repository} />
+		</div>
+	);
+};
 
 App.defaultProps = {
 	title: "Portfolio",
@@ -75,16 +58,17 @@ App.defaultProps = {
 	repository: "https://github.com/WillCallahan/portfolio",
 	socialProfiles: {
 		github: "https://github.com/WillCallahan",
-		linkedin: "https://www.linkedin.com/in/william-callahan-32ba31109/"
+		linkedin: "https://www.linkedin.com/in/william-callahan-32ba31109/",
 	},
-	profileImage: "/images/theme/Profile3.png"
+	profileImage: "/images/theme/Profile3.png",
 };
 
 App.propTypes = {
 	title: PropTypes.string,
 	name: PropTypes.string,
 	repository: PropTypes.string,
-	socialProfiles: PropTypes.object
+	socialProfiles: PropTypes.object,
+	profileImage: PropTypes.string,
 };
 
 export default App;
