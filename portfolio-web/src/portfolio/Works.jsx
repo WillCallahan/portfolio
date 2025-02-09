@@ -40,7 +40,7 @@ const Works = ({ title, description, works, worksPerRow }) => {
     };
 
     return (
-        <section id="portfolio" className="callout">
+        <section id="portfolio" className="section">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 headline wow bounceInDown">

@@ -22,7 +22,7 @@ class Slider extends React.Component {
 
 	render() {
 		return (
-			<section id="clients" className="section">
+			<section id="clients" className="callout">
 				<div className="container" data-aos="slide-left">
 					<div className="row">
 						<div className="col-md-3 hidden-xs">

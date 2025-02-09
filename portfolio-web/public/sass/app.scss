@@ -17,3 +17,7 @@
 .inline-block {
 	display: inline-block !important;
 }
+
+.slick-prev:before, .slick-next:before {
+	color: rgba(34, 34, 34, 0.4);
+}
