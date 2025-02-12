@@ -73,16 +73,16 @@ Works.defaultProps = {
             image: "/images/portfolio/Ishihara-Protanopia.jpg",
         },
         {
+            title: "PDF Generation",
+            description: "PDF Generation with ReportLab",
+            popupLink: "https://github.com/WillCallahan/da_forms",
+            image: "/images/portfolio/DAFormGeneration.png",
+        },
+        {
             title: "Battleship",
             description: "Battleship Game",
             popupLink: "https://github.com/WillCallahan/wcsu-cs-360-01",
             image: "/images/portfolio/BattleshipCrop.jpg",
-        },
-        {
-            title: "MSL Compiler",
-            description: "Custom Language Compiler",
-            popupLink: "https://github.com/WillCallahan/wcsu-cs-299-01",
-            image: "/images/portfolio/MSLCompiler.jpg",
         },
         {
             title: "Typing Test",

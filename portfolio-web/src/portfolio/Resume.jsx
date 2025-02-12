@@ -56,8 +56,7 @@ Resume.defaultProps = {
                             <li>Redesigned US election survey platform, improving model accuracy and
                                 accelerating live election publishing</li>
                             <li>Reimagined company CI/CD pipeline and build processes to reduce build
-                                times by 60%
-                                Architected dist</li>
+                                times by 60%</li>
                             <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK,
                                 ECS, Beanstalk, Kinesis, ELB, SQS, EC2, SSM, and VPCs</li>
                             <li>Reduced cloud Operational costs per client by 15% on average</li>

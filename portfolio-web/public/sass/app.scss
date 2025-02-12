@@ -21,3 +21,11 @@
 .slick-prev:before, .slick-next:before {
 	color: rgba(34, 34, 34, 0.4);
 }
+
+.portfolio-item-preview {
+	height: 240px;
+	width: 100%;
+	object-fit: cover;
+	object-position: top;
+	background-color: white;
+}
