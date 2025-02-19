@@ -46,21 +46,22 @@ Resume.defaultProps = {
                     title: "Senior Cloud Software Engineer",
                     description: (
                         <ul>
-							<li>Led cross-functional clients in health, government, and media sectors on
-                                designing and implementing multi-cloud solutions, ensuring security,
-                                durability, and scalability</li>
-							<li>Reduced batch execution times by 90%, accelerating time to market from
-                                hours to minutes for multiple clients</li>
-                            <li>Optimized live election API performance, ensuring consistent sub-200ms latency while
-                                querying large dynamic datasets handling over 10 million daily global requests</li>
-                            <li>Redesigned US election survey platform, improving model accuracy and
-                                accelerating live election publishing</li>
-                            <li>Reimagined company CI/CD pipeline to reduce build times by 60%</li>
-                            <li>Championed SOC 2 initiatives to reduce over 300 SCM vulnerabilities in the
-                                first month using SecurityHub, Dependabot, and Patch Manager</li>
+							<li>Led software engineering teams of four in health, media, and public sectors on
+                                designing and implementing multi-cloud solutions, ensuring security, durability,
+                                and scalability</li>
+							<li>Optimized live election API performance, ensuring consistent sub-200ms latency
+                                querying large dynamic datasets handling over 10-million daily global requests</li>
+                            <li>Reduced batch execution times by 90%, accelerating time to market from hours to
+                                minutes for multiple clients utilizing diverse databases</li>
+                            <li>Redesigned US election survey weighting platform, improving model accuracy and
+                                accelerating live election publishing to achieve accurate election forecasts</li>
+                            <li>Reimagined CI/CD pipeline to reduce build times by 60%, cost by 20%, and SCM
+                                vulnerabilities by 65%</li>
+                            <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK, ECS,
+                                Kinesis, ELB, SQS, EC2, Elastic Beanstalk, SSM, OpenSearch, and VPCs</li>
                             <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK,
                                 ECS, Beanstalk, Kinesis, ELB, SQS, EC2, SSM, and VPCs</li>
-                            <li>Reduced cloud Operational costs per client by 15% on average</li>
+                            <li>Reduced cloud OpEx by 15% across four clients saving over $127,000 per year</li>
                         </ul>
                     ),
                     company: "ThorTech Solutions",
@@ -71,8 +72,10 @@ Resume.defaultProps = {
                     title: "Squad Leader",
                     description: (
                         <ul>
-							<li>Led an eight-soldier squad, providing training, direction, and development for successful overseas deployment in support of Operation Enduring Freedom (OEF)</li>
-                            <li>Oversaw the execution of missions and maintained high morale and discipline within the squad</li>
+							<li>Led an eight-soldier infantry squad, providing training, direction, and development
+                                for a successful deployment in support of Operation Enduring Freedom (OEF)</li>
+                            <li>Executed joint military missions among EARF CJTF-HOA, successfully
+                                strengthening international relationships for the first time in 20 years</li>
                         </ul>
                     ),
                     company: "US Army National Guard",
@@ -82,8 +85,11 @@ Resume.defaultProps = {
                     title: "Software Engineer",
                     description: (
                         <ul>
-							<li>Collaborated with stakeholders to define requirements for a dynamic forms application, leveraging Django, React, and MySQL</li>
-							<li>Designed and implemented a scalable architecture to support global efforts in tracking illicit firearms trade to award multi-million aid packages to member countries</li>
+							<li>Collaborated with multi-national stakeholders to define requirements for a
+                                dynamic forms application, leveraging Django, React, and MySQL</li>
+							<li>Designed and implemented a scalable architecture to support global efforts in
+                                tracking illicit firearms trade to award multi-million aid packages to over 75
+                                member states</li>
                         </ul>
                     ),
                     company: "United Nations Office for Disarmament Affairs",
@@ -93,8 +99,10 @@ Resume.defaultProps = {
                     title: "Software Engineer Team Lead",
                     description: (
                         <ul>
-                            <li>Chaired the first student-led software development team at WCSU</li>
-                            <li>Mentored fellow engineers in Java, Spring, Oracle, MSAD, and JBoss to build a university operations management website</li>
+                            <li>Mentored fellow engineers in the first student-led university software engineering
+                                team using Angular, Java EE, Spring, Oracle, MSAD, and JBoss</li>
+                            <li>Digitized university operations paperwork and timekeeping, saving over 30
+                                employees one hour each daily</li>
                         </ul>
                     ),
                     company: "WCSU",
