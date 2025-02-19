@@ -37,7 +37,7 @@ class Resume extends React.Component {
 Resume.defaultProps = {
     title: "Resume",
     description: "My education and experience.",
-    resumeLink: "/docs/CV_WilliamCallahan_08FEB2025.pdf",
+    resumeLink: "/docs/CV_William_Callahan_16FEB2025.pdf",
     resumeLinkText: "Download CV",
     resumeSections: [
         React.createElement(ResumeSection, {
@@ -55,8 +55,9 @@ Resume.defaultProps = {
                                 latency while querying large dynamic datasets</li>
                             <li>Redesigned US election survey platform, improving model accuracy and
                                 accelerating live election publishing</li>
-                            <li>Reimagined company CI/CD pipeline and build processes to reduce build
-                                times by 60%</li>
+                            <li>Reimagined company CI/CD pipeline to reduce build times by 60%</li>
+                            <li>Championed SOC 2 initiatives to reduce over 300 SCM vulnerabilities in the
+                                first month using SecurityHub, Dependabot, and Patch Manager</li>
                             <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK,
                                 ECS, Beanstalk, Kinesis, ELB, SQS, EC2, SSM, and VPCs</li>
                             <li>Reduced cloud Operational costs per client by 15% on average</li>

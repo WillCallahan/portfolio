@@ -99,7 +99,7 @@ Profile.defaultProps = {
 	descriptionTitle: "Professional Profile",
 	description: (
 		<p>
-			Cloud Software Engineer with eight years of experience designing and implementing scalable, high-performance
+			Cloud Software Engineer with ten years of experience designing and implementing scalable, high-performance
 			multi-cloud architectures. Proven ability to lead cross-functional teams to deliver mission-critical solutions
 			of complex applications while improving security and reducing costs.
 		</p>
