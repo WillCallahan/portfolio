@@ -55,13 +55,11 @@ Resume.defaultProps = {
                                 minutes for multiple clients utilizing diverse databases</li>
                             <li>Redesigned US election survey weighting platform, improving model accuracy and
                                 accelerating live election publishing to achieve accurate election forecasts</li>
-                            <li>Reimagined CI/CD pipeline to reduce build times by 60%, cost by 20%, and SCM
-                                vulnerabilities by 65%</li>
+                            <li>Reimagined CI/CD pipeline to reduce build times by 44%, cost by 29%, and SCM
+                                vulnerabilities by 52%</li>
                             <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK, ECS,
                                 Kinesis, ELB, SQS, EC2, Elastic Beanstalk, SSM, OpenSearch, and VPCs</li>
-                            <li>Architected distributed systems using AWS Lambda, ElastiCache, RDS, MSK,
-                                ECS, Beanstalk, Kinesis, ELB, SQS, EC2, SSM, and VPCs</li>
-                            <li>Reduced cloud OpEx by 15% across four clients saving over $127,000 per year</li>
+                            <li>Reduced cloud OpEx by 19% across four clients saving over $127,000 per year</li>
                         </ul>
                     ),
                     company: "ThorTech Solutions",
