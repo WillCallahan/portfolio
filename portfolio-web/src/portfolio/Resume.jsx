@@ -51,8 +51,8 @@ Resume.defaultProps = {
                                 durability, and scalability</li>
 							<li>Reduced batch execution times by 90%, accelerating time to market from
                                 hours to minutes for multiple clients</li>
-                            <li>Optimized live election API performance, ensuring consistent sub-200ms
-                                latency while querying large dynamic datasets</li>
+                            <li>Optimized live election API performance, ensuring consistent sub-200ms latency while
+                                querying large dynamic datasets handling over 10 million daily global requests</li>
                             <li>Redesigned US election survey platform, improving model accuracy and
                                 accelerating live election publishing</li>
                             <li>Reimagined company CI/CD pipeline to reduce build times by 60%</li>
@@ -71,7 +71,7 @@ Resume.defaultProps = {
                     title: "Squad Leader",
                     description: (
                         <ul>
-							<li> Led an eight-soldier squad, providing training, direction, and development for successful overseas deployment in support of Operation Enduring Freedom (OEF)</li>
+							<li>Led an eight-soldier squad, providing training, direction, and development for successful overseas deployment in support of Operation Enduring Freedom (OEF)</li>
                             <li>Oversaw the execution of missions and maintained high morale and discipline within the squad</li>
                         </ul>
                     ),
@@ -82,18 +82,18 @@ Resume.defaultProps = {
                     title: "Software Engineer",
                     description: (
                         <ul>
-							<li>Collaborated with stakeholders to dene requirements for a dynamic forms application, leveraging Django, React, and MySQL</li>
-							<li>Designed and implemented a scalable architecture to support global efforts in tracking illicit rearms trade</li>
+							<li>Collaborated with stakeholders to define requirements for a dynamic forms application, leveraging Django, React, and MySQL</li>
+							<li>Designed and implemented a scalable architecture to support global efforts in tracking illicit firearms trade to award multi-million aid packages to member countries</li>
                         </ul>
                     ),
-                    company: "United Nations",
+                    company: "United Nations Office for Disarmament Affairs",
                     date: "2014 - 2017"
                 }),
                 React.createElement(ResumeItem, {
                     title: "Software Engineer Team Lead",
                     description: (
                         <ul>
-                            <li>Chaired the rst student-led software development team at WCSU</li>
+                            <li>Chaired the first student-led software development team at WCSU</li>
                             <li>Mentored fellow engineers in Java, Spring, Oracle, MSAD, and JBoss to build a university operations management website</li>
                         </ul>
                     ),
