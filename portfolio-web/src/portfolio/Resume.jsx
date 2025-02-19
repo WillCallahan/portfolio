@@ -37,7 +37,7 @@ class Resume extends React.Component {
 Resume.defaultProps = {
     title: "Resume",
     description: "My education and experience.",
-    resumeLink: "/docs/CV_William_Callahan_16FEB2025.pdf",
+    resumeLink: "/docs/CV_William_Callahan_19FEB2025.pdf",
     resumeLinkText: "Download CV",
     resumeSections: [
         React.createElement(ResumeSection, {
@@ -112,7 +112,7 @@ Resume.defaultProps = {
                         </ul>
                     ),
                     company: "Stevens Institute of Technology",
-                    date: "2023 - Current",
+                    date: "2024 - Current",
                     icon: "fa-area-chart",
                     offset: false
                 }),
