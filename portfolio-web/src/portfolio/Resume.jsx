@@ -37,7 +37,7 @@ class Resume extends React.Component {
 Resume.defaultProps = {
     title: "Resume",
     description: "My education and experience.",
-    resumeLink: "/docs/CV_William_Callahan_19FEB2025T1803.pdf",
+    resumeLink: "/docs/CV_William_Callahan_28FEB2025.pdf",
     resumeLinkText: "Download CV",
     resumeSections: [
         React.createElement(ResumeSection, {
