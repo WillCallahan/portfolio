@@ -63,7 +63,7 @@ Resume.defaultProps = {
                         </ul>
                     ),
                     company: "ThorTech Solutions",
-                    date: "2017 - Current",
+                    date: "2017 - 2025",
 					offset: false
                 }),
                 React.createElement(ResumeItem, {
@@ -111,18 +111,6 @@ Resume.defaultProps = {
         React.createElement(ResumeSection, {
             title: "Education", resumeItems: [
                 React.createElement(ResumeItem, {
-                    title: "MS in Data Science (In Progress)",
-                    description: (
-                        <ul>
-                            <li>Currently working on obtaining a Masters of Science in Data Science.</li>
-                        </ul>
-                    ),
-                    company: "Stevens Institute of Technology",
-                    date: "2024 - Current",
-                    icon: "fa-area-chart",
-                    offset: false
-                }),
-                React.createElement(ResumeItem, {
                     title: "BS in Computer science, Minor in Security",
                     description: (
                         <ul>
@@ -132,7 +120,8 @@ Resume.defaultProps = {
                     ),
                     company: "WCSU",
                     date: "2012 - 2017",
-                    icon: "fa-graduation-cap"
+                    icon: "fa-graduation-cap",
+                    offset: false
                 }),
             ]
         }),
