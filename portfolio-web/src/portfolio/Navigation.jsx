@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import $ from "jquery";
 
 const Navigation = ({ name, tabs }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     useEffect(() => {
         let navbar = $(".navbar");
         let navHeight = navbar.height();
@@ -20,6 +22,8 @@ const Navigation = ({ name, tabs }) => {
                 navbar.addClass("custom-collapse");
             } else {
                 navbar.removeClass("custom-collapse");
+                // Close menu when switching to desktop view
+                setIsMenuOpen(false);
             }
         };
 
@@ -35,15 +39,24 @@ const Navigation = ({ name, tabs }) => {
         };
     }, []);
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
     return (
         <nav className="navbar navbar-custom navbar-fixed-top custom-collapse" role="navigation">
             <div className="container">
                 <div className="navbar-header">
                     <button
                         type="button"
-                        className="navbar-toggle"
-                        data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1"
+                        className={`navbar-toggle ${isMenuOpen ? 'collapsed' : ''}`}
+                        onClick={toggleMenu}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="bs-example-navbar-collapse-1"
                     >
                         <span className="sr-only">Toggle navigation</span>
                         <span className="icon-bar" />
@@ -55,27 +68,31 @@ const Navigation = ({ name, tabs }) => {
                     </a>
                 </div>
 
-                <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-testid="navbar-collapse">
+                <div 
+                    className={`collapse navbar-collapse ${isMenuOpen ? 'in' : ''}`} 
+                    id="bs-example-navbar-collapse-1" 
+                    data-testid="navbar-collapse"
+                >
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#home">Home</a>
+                            <a href="#home" onClick={closeMenu}>Home</a>
                         </li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="#about" onClick={closeMenu}>About</a>
                         </li>
                         <li>
-                            <a href="#resume">Resume</a>
+                            <a href="#resume" onClick={closeMenu}>Resume</a>
                         </li>
                         <li>
-                            <a href="#works">Works</a>
+                            <a href="#works" onClick={closeMenu}>Works</a>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="#contact" onClick={closeMenu}>Contact</a>
                         </li>
                         {/* Additional tabs from props */}
                         {Object.keys(tabs).map((tab) => (
                             <li key={tab}>
-                                <a href={tabs[tab]}>{tab}</a>
+                                <a href={tabs[tab]} onClick={closeMenu}>{tab}</a>
                             </li>
                         ))}
                     </ul>
