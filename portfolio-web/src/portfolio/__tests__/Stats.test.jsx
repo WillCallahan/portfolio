@@ -1,46 +1,65 @@
 import { render, screen } from '@testing-library/react'
 import Stats from '../Stats'
 
+// Mock the waypoints library completely
+vi.mock('waypoints/lib/jquery.waypoints.js', () => ({}))
+
+// Mock jQuery with waypoint functionality
+vi.mock('jquery', () => {
+  const mockJQuery = vi.fn(() => ({
+    waypoint: vi.fn((callback) => {
+      // Don't execute callback to avoid errors
+      return { destroy: vi.fn() }
+    }),
+    each: vi.fn(),
+    delay: vi.fn(() => ({ countTo: vi.fn() })),
+    attr: vi.fn(() => '100')
+  }))
+  return { default: mockJQuery }
+})
+
 describe('Stats Component', () => {
-  it('renders all stat items', () => {
+  it('renders stats section', () => {
     render(<Stats />)
     
-    // Check for common stats that might be displayed
-    expect(screen.getByText(/years of experience/i)).toBeInTheDocument()
-    expect(screen.getByText(/projects completed/i)).toBeInTheDocument()
-    expect(screen.getByText(/happy clients/i)).toBeInTheDocument()
-    expect(screen.getByText(/certifications/i)).toBeInTheDocument()
+    const statsSection = screen.getByRole('region')
+    expect(statsSection).toBeInTheDocument()
+    expect(statsSection).toHaveAttribute('id', 'stats')
+    expect(statsSection).toHaveClass('callout')
+  })
+
+  it('renders default title', () => {
+    render(<Stats />)
+    
+    expect(screen.getByText('My Stats')).toBeInTheDocument()
+  })
+
+  it('renders default statistics', () => {
+    render(<Stats />)
+    
+    expect(screen.getByText('Cloud Certs')).toBeInTheDocument()
+    expect(screen.getByText('Languages')).toBeInTheDocument()
+    expect(screen.getByText('Lines Written')).toBeInTheDocument()
   })
 
   it('displays numeric values for stats', () => {
     render(<Stats />)
     
-    // Look for numeric values (assuming they exist in the component)
-    const numbers = screen.getAllByText(/\d+/)
-    expect(numbers.length).toBeGreaterThan(0)
+    expect(screen.getByText('7')).toBeInTheDocument()
+    expect(screen.getByText('17')).toBeInTheDocument()
+    expect(screen.getByText('1200000')).toBeInTheDocument()
   })
 
-  it('has proper structure with stat items', () => {
+  it('renders with proper CSS structure', () => {
     render(<Stats />)
     
-    const statsContainer = screen.getByTestId('stats-container')
-    expect(statsContainer).toBeInTheDocument()
+    const statsSection = screen.getByRole('region')
+    expect(statsSection).toHaveClass('callout')
     
-    const statItems = screen.getAllByTestId('stat-item')
-    expect(statItems.length).toBeGreaterThan(0)
-  })
-
-  it('renders with proper CSS classes for styling', () => {
-    render(<Stats />)
+    const container = statsSection.querySelector('.container')
+    expect(container).toBeInTheDocument()
     
-    const statsContainer = screen.getByTestId('stats-container')
-    expect(statsContainer).toHaveClass('stats-section')
-  })
-
-  it('includes icons for each stat', () => {
-    render(<Stats />)
-    
-    const icons = screen.getAllByRole('img', { hidden: true })
-    expect(icons.length).toBeGreaterThan(0)
+    const row = container.querySelector('.row')
+    expect(row).toBeInTheDocument()
   })
 })

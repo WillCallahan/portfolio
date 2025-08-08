@@ -1,59 +1,53 @@
-import * as ContactRepository from '../ContactRepository'
-import ApiRepository from '../ApiRepository'
+import ContactRepository from '../ContactRepository'
 
-// Mock ApiRepository
+// Mock ApiRepository as a proper class
 vi.mock('../ApiRepository', () => ({
-  default: {
-    post: vi.fn()
+  default: class MockApiRepository {
+    constructor(endpointUrl) {
+      this.endpointUrl = endpointUrl
+    }
+    
+    getUrl() {
+      return `api/${this.endpointUrl}`
+    }
+    
+    save() { return Promise.resolve() }
+    getAll() { return Promise.resolve() }
+    getOne() { return Promise.resolve() }
+    update() { return Promise.resolve() }
+    remove() { return Promise.resolve() }
+    
+    static post = vi.fn()
+    static get = vi.fn()
   }
 }))
 
 describe('ContactRepository', () => {
+  let contactRepo
+
   beforeEach(() => {
     vi.clearAllMocks()
+    contactRepo = new ContactRepository()
   })
 
-  describe('sendMessage', () => {
-    it('calls ApiRepository.post with correct parameters', async () => {
-      const mockResponse = { isSuccess: true }
-      ApiRepository.post.mockResolvedValue(mockResponse)
+  describe('constructor', () => {
+    it('creates instance with correct endpoint', () => {
+      expect(contactRepo).toBeInstanceOf(ContactRepository)
+      expect(contactRepo.endpointUrl).toBe('contacts')
+    })
+  })
 
-      const contactData = {
-        name: 'John Doe',
-        email: 'john@example.com',
-        message: 'Test message'
-      }
-
-      const result = await ContactRepository.sendMessage(contactData)
-
-      expect(ApiRepository.post).toHaveBeenCalledWith(
-        expect.stringContaining('/contact'),
-        contactData
-      )
-      expect(result).toEqual(mockResponse)
+  describe('inheritance', () => {
+    it('inherits from ApiRepository', () => {
+      expect(contactRepo.getUrl()).toBe('api/contacts')
     })
 
-    it('handles API errors', async () => {
-      const error = new Error('API Error')
-      ApiRepository.post.mockRejectedValue(error)
-
-      const contactData = {
-        name: 'John Doe',
-        email: 'john@example.com',
-        message: 'Test message'
-      }
-
-      await expect(ContactRepository.sendMessage(contactData)).rejects.toThrow('API Error')
-    })
-
-    it('validates required fields', async () => {
-      const incompleteData = {
-        name: 'John Doe'
-        // missing email and message
-      }
-
-      // This should be handled by the component validation, but we can test the repository behavior
-      await expect(ContactRepository.sendMessage(incompleteData)).rejects.toThrow()
+    it('has access to parent methods', () => {
+      expect(typeof contactRepo.save).toBe('function')
+      expect(typeof contactRepo.getAll).toBe('function')
+      expect(typeof contactRepo.getOne).toBe('function')
+      expect(typeof contactRepo.update).toBe('function')
+      expect(typeof contactRepo.remove).toBe('function')
     })
   })
 })

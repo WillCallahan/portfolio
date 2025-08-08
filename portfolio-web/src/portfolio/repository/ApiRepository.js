@@ -107,12 +107,15 @@ class ApiRepository {
 			const responseData = await response.json();
 			return responseData;
 		} catch (error) {
-			if (error.name === 'TypeError' && error.message.includes('fetch')) {
+			// Check for network errors - either TypeError from fetch or explicit Network error
+			if (error.name === 'TypeError' || error.message.includes('Network error')) {
 				throw new Error('Network error');
 			}
+			// Check for HTTP errors
 			if (error.message.includes('HTTP error')) {
 				throw error;
 			}
+			// JSON parsing errors or other errors
 			throw new Error('Invalid JSON response');
 		}
 	}
@@ -138,12 +141,15 @@ class ApiRepository {
 			const responseData = await response.json();
 			return responseData;
 		} catch (error) {
-			if (error.name === 'TypeError' && error.message.includes('fetch')) {
+			// Check for network errors - either TypeError from fetch or explicit Network error
+			if (error.name === 'TypeError' || error.message.includes('Network error')) {
 				throw new Error('Network error');
 			}
+			// Check for HTTP errors
 			if (error.message.includes('HTTP error')) {
 				throw error;
 			}
+			// JSON parsing errors or other errors
 			throw new Error('Invalid JSON response');
 		}
 	}

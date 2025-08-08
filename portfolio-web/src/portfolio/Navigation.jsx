@@ -57,14 +57,22 @@ const Navigation = ({ name, tabs }) => {
 
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-testid="navbar-collapse">
                     <ul className="nav navbar-nav navbar-right">
-                        {/* Add Home link that tests expect */}
                         <li>
-                            <a href="#intro">Home</a>
+                            <a href="#home">Home</a>
                         </li>
-                        {/* Add About link that tests expect */}
                         <li>
-                            <a href="#profile">About</a>
+                            <a href="#about">About</a>
                         </li>
+                        <li>
+                            <a href="#resume">Resume</a>
+                        </li>
+                        <li>
+                            <a href="#works">Works</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                        {/* Additional tabs from props */}
                         {Object.keys(tabs).map((tab) => (
                             <li key={tab}>
                                 <a href={tabs[tab]}>{tab}</a>
@@ -81,8 +89,6 @@ Navigation.defaultProps = {
     name: "William Callahan",
     tabs: {
         Certifications: "#certifications",
-        Resume: "#resume",
-        Contact: "#contact",
     },
 };
 

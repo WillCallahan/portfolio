@@ -2,19 +2,29 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Contact from '../Contact'
 
-// Mock the ContactRepository
+// Mock the ContactRepository with proper hoisting
 vi.mock('../repository/ContactRepository', () => ({
-  default: {
-    sendMessage: vi.fn()
+  default: class MockContactRepository {
+    static sendMessage = vi.fn()
+  }
+}))
+
+// Mock the Contact model
+vi.mock('../model/Contact', () => ({
+  default: class MockContact {
+    constructor(data) {
+      Object.assign(this, data)
+    }
   }
 }))
 
 describe('Contact Component', () => {
-  let mockContactRepository
+  let mockSendMessage
 
   beforeEach(() => {
     vi.clearAllMocks()
-    mockContactRepository = require('../repository/ContactRepository').default
+    const ContactRepository = require('../repository/ContactRepository').default
+    mockSendMessage = ContactRepository.sendMessage
   })
 
   it('renders contact form with all required fields', () => {
@@ -57,7 +67,7 @@ describe('Contact Component', () => {
 
   it('submits form with valid data', async () => {
     const user = userEvent.setup()
-    mockContactRepository.sendMessage.mockResolvedValue({ isSuccess: true })
+    mockSendMessage.mockResolvedValue({ isSuccess: true })
     
     render(<Contact />)
     
@@ -69,7 +79,7 @@ describe('Contact Component', () => {
     await user.click(submitButton)
     
     await waitFor(() => {
-      expect(mockContactRepository.sendMessage).toHaveBeenCalledWith({
+      expect(mockSendMessage).toHaveBeenCalledWith({
         name: 'John Doe',
         email: 'john@example.com',
         message: 'This is a test message with enough words'
@@ -79,7 +89,7 @@ describe('Contact Component', () => {
 
   it('displays success message after successful submission', async () => {
     const user = userEvent.setup()
-    mockContactRepository.sendMessage.mockResolvedValue({ isSuccess: true })
+    mockSendMessage.mockResolvedValue({ isSuccess: true })
     
     render(<Contact />)
     
@@ -97,7 +107,7 @@ describe('Contact Component', () => {
 
   it('displays error message on submission failure', async () => {
     const user = userEvent.setup()
-    mockContactRepository.sendMessage.mockRejectedValue(new Error('Network error'))
+    mockSendMessage.mockRejectedValue(new Error('Network error'))
     
     render(<Contact />)
     

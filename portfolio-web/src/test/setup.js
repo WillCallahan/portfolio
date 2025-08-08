@@ -1,7 +1,40 @@
 import '@testing-library/jest-dom'
 
+// Mock waypoints library
+vi.mock('waypoints/lib/jquery.waypoints.js', () => ({}))
+
 // Mock jQuery and other global dependencies
-global.$ = global.jQuery = {
+const mockJQueryElement = {
+  waypoint: vi.fn((callback) => {
+    // Simulate waypoint callback execution
+    if (typeof callback === 'function') {
+      callback.call({ destroy: vi.fn() })
+    }
+    return mockJQueryElement
+  }),
+  each: vi.fn((callback) => {
+    // Simulate each callback
+    if (typeof callback === 'function') {
+      callback.call(mockJQueryElement, 0, mockJQueryElement)
+    }
+    return mockJQueryElement
+  }),
+  countTo: vi.fn(() => mockJQueryElement),
+  delay: vi.fn(() => mockJQueryElement),
+  attr: vi.fn(() => '100'),
+  addClass: vi.fn(() => mockJQueryElement),
+  removeClass: vi.fn(() => mockJQueryElement),
+  height: vi.fn(() => 100),
+  scrollTop: vi.fn(() => 0),
+  width: vi.fn(() => 1024),
+  on: vi.fn(() => mockJQueryElement),
+  off: vi.fn(() => mockJQueryElement)
+}
+
+global.$ = global.jQuery = vi.fn(() => mockJQueryElement)
+
+// Add static methods to jQuery
+Object.assign(global.$, {
   fn: {
     extend: () => {},
     backstretch: () => {},
@@ -14,24 +47,8 @@ global.$ = global.jQuery = {
   },
   extend: () => {},
   each: () => {},
-  ready: (fn) => fn(),
-  // Mock jQuery selector function
-  default: (selector) => ({
-    waypoint: vi.fn(),
-    each: vi.fn(),
-    countTo: vi.fn(),
-    addClass: vi.fn(),
-    removeClass: vi.fn(),
-    height: vi.fn(() => 100),
-    scrollTop: vi.fn(() => 0),
-    width: vi.fn(() => 1024),
-    on: vi.fn(),
-    off: vi.fn()
-  })
-}
-
-// Make $ function work as selector
-Object.assign(global.$, global.$.default)
+  ready: (fn) => fn()
+})
 
 // Mock window.WOW
 global.WOW = class {
