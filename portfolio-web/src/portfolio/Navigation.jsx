@@ -75,16 +75,22 @@ const Navigation = ({ name, tabs }) => {
                 >
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#home" onClick={closeMenu}>Home</a>
+                            <a href="#intro" onClick={closeMenu}>Home</a>
                         </li>
                         <li>
-                            <a href="#about" onClick={closeMenu}>About</a>
+                            <a href="#profile" onClick={closeMenu}>About</a>
+                        </li>
+                        <li>
+                            <a href="#certifications" onClick={closeMenu}>Certifications</a>
+                        </li>
+                        <li>
+                            <a href="#services" onClick={closeMenu}>Services</a>
                         </li>
                         <li>
                             <a href="#resume" onClick={closeMenu}>Resume</a>
                         </li>
                         <li>
-                            <a href="#works" onClick={closeMenu}>Works</a>
+                            <a href="#portfolio" onClick={closeMenu}>Portfolio</a>
                         </li>
                         <li>
                             <a href="#contact" onClick={closeMenu}>Contact</a>
@@ -104,9 +110,7 @@ const Navigation = ({ name, tabs }) => {
 
 Navigation.defaultProps = {
     name: "William Callahan",
-    tabs: {
-        Certifications: "#certifications",
-    },
+    tabs: {},
 };
 
 Navigation.propTypes = {
