@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Mail;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using Newtonsoft.Json;
@@ -15,6 +13,16 @@ namespace Portfolio.Lambda
         private const int MinimumWords = 5;
         
         private static readonly Context Context = new Context();
+        private readonly IEmailService _emailService;
+
+        public LambdaEntryPoint() : this(new EmailService())
+        {
+        }
+
+        public LambdaEntryPoint(IEmailService emailService)
+        {
+            _emailService = emailService;
+        }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public APIGatewayProxyResponse SendEmail(APIGatewayProxyRequest apiRequest, ILambdaContext context) {
@@ -25,7 +33,7 @@ namespace Portfolio.Lambda
                 
                 var isValidEmail = IsValidEmail(request);
                 if (isValidEmail) {
-                    SendEmailInternal(request);
+                    _emailService.SendEmail(request, Context);
                 }
                 else {
                     Console.WriteLine($"Refusing to send email; message is likely spam.  Name={request.Name} Email={request.Email} Message={request.Message}");
@@ -59,43 +67,6 @@ namespace Portfolio.Lambda
                     }
                 };
                 return apiResponse;
-            }
-        }
-        
-        private static void SendEmailInternal(Request request) {
-            using (var client = new SmtpClient(Context.Host, Context.Port)) {
-                client.Credentials = new NetworkCredential(Context.Username, Context.Password);
-                client.EnableSsl = Context.EnableSsl;
-
-                var body = $@"
-Request From: {request.Name}
-Email: {request.Email}
-Message:
-{request.Message}
-";
-                
-                Console.WriteLine($"Message Information - {body}");
-                
-                var message = new MailMessage {
-                    IsBodyHtml = false,
-                    From = new MailAddress(Context.SenderEmail, Context.SenderName),
-                    To = { new MailAddress(Context.SenderEmail) },
-                    Subject = $"{Context.SubjectPrefix}{request.Name}",
-                    Body = body
-                };
-
-                SetConfigurationSet(message, Context);
-                
-                Console.WriteLine("Sending email...");
-                client.Send(message);
-                Console.WriteLine("Sent email");
-            }
-        }
-
-        private static void SetConfigurationSet(MailMessage mailMessage, Context context) {
-            if (!string.IsNullOrEmpty(context.SesConfigurationSet)) {
-                Console.WriteLine("Setting the X-SES-CONFIGURATION-SET header");
-                mailMessage.Headers.Add("X-SES-CONFIGURATION-SET", context.SesConfigurationSet);
             }
         }
 

@@ -84,6 +84,70 @@ class ApiRepository {
 		});
 	};
 
+	/**
+	 * Makes a POST request to the specified URL
+	 * @param {string} url - The URL to send the request to
+	 * @param {object} data - The data to send in the request body
+	 * @returns {Promise} Promise that resolves with the response data
+	 */
+	static async post(url, data) {
+		try {
+			const response = await fetch(url, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+
+			const responseData = await response.json();
+			return responseData;
+		} catch (error) {
+			if (error.name === 'TypeError' && error.message.includes('fetch')) {
+				throw new Error('Network error');
+			}
+			if (error.message.includes('HTTP error')) {
+				throw error;
+			}
+			throw new Error('Invalid JSON response');
+		}
+	}
+
+	/**
+	 * Makes a GET request to the specified URL
+	 * @param {string} url - The URL to send the request to
+	 * @returns {Promise} Promise that resolves with the response data
+	 */
+	static async get(url) {
+		try {
+			const response = await fetch(url, {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+
+			const responseData = await response.json();
+			return responseData;
+		} catch (error) {
+			if (error.name === 'TypeError' && error.message.includes('fetch')) {
+				throw new Error('Network error');
+			}
+			if (error.message.includes('HTTP error')) {
+				throw error;
+			}
+			throw new Error('Invalid JSON response');
+		}
+	}
+
 }
 
 export default ApiRepository;

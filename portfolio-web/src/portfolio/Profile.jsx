@@ -47,11 +47,11 @@ const Profile = ({ name, overallSkills, skillSet, socialProfiles, image, descrip
 	};
 
 	return (
-		<section id="profile" className="section">
+		<section id="profile" className="section" role="region" aria-labelledby="profile-heading">
 			<div className="container">
 				<div className="row">
 					<div className="col-md-12 headline wow bounceInDown">
-						<h2>{name}</h2>
+						<h2 id="profile-heading">{name}</h2>
 						<p>{overallSkills}</p>
 					</div>
 					<div className="col-md-3 col-sm-6 hidden-xs" data-aos="fade-right">
