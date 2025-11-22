@@ -13,6 +13,11 @@ const Certifications = ({ title, certificationsLink }) => {
             alt: 'AWS Certified Security - Specialty',
         },
         {
+            link: 'https://www.credly.com/org/comptia/badge/comptia-security-ce-certification',
+            image: 'https://images.credly.com/size/340x340/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob',
+            alt: 'CompTIA Security+',
+        },
+        {
             link: 'https://www.credly.com/badges/c67695e0-aa7f-4ce8-83b7-83153af42ca8/public_url',
             image: 'https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png',
             alt: 'AWS Certified Solutions Architect - Associate',
