@@ -25,7 +25,7 @@
     "jquery-popup-overlay": "^2.1.5",
     "jquery.backstretch": "^2.1.15",
     "jquery.simple-text-rotator": "^0.0.1",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "magnific-popup": "^1.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
